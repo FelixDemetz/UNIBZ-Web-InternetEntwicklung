@@ -44,6 +44,7 @@
         </div>
 
         <!-- Section with big IMG and Text-->
+        <!-- Text opens when clicking on name!-->
         <div class="section" id="">
             <div id="1">
                 <div style="background-color:rgb(0, 0, 0); padding: 100 0 100 0px;">
@@ -51,14 +52,14 @@
                         <h1>Unser Team</h1>
                         <div>
                             <div class="container" id="containerFotoTeam">
-                                <img src="felix.jpg" alt="Felix Demetz">
-                                <h2>Felix Demetz</h2>
-                                <p>I was born and raised in Ortisei, Val Gardena! I went to a business school before I changed subject and started studying Computer Science this year. When I am not studying or working you always find me outside in the nature!</p>
+                                <img class="imgTeam" src="felix.jpg" alt="Felix Demetz">
+                                <button onclick="myFunction2()" id="button">Felix Demetz</button>
+                                <p style="display: none;" id="hideText">I was born and raised in Ortisei, Val Gardena! I went to a business school before I changed subject and started studying Computer Science this year. When I am not studying or working you always find me outside in the nature or playing football.</p>
                             </div>
                             <div class="container" id="containerFotoTeam">
-                                <img src="Lucas.jpg" alt="Lucas Glück">
-                                <h2>Lucas Glück</h2>
-                                <p>Dosenbier saufen!</p>
+                                <img class="imgTeam" src="Lucas.jpg" alt="Lucas Glück">
+                                <button onclick="myFunction3()" id="button">Lucas Glück</button>
+                                <p style="display: none;" id="hideText2">I was born in Selva, now I live in Ortisei and I went to a business highschool. I am in my second year as a Computer Science student. In my free time I like to go skiing or generally in the mountains. I also played icehockey for 15 years.</p>
                             </div>
                         </div>
                     </div>
@@ -91,5 +92,27 @@
           }
         }
     </script>
+
+    <script>
+        function myFunction2() {
+        var x = document.getElementById("hideText");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+        }
+    </script>
+
+<script>
+    function myFunction3() {
+    var x = document.getElementById("hideText2");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+    }
+</script>
         
 </html>
