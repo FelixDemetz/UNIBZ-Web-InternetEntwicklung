@@ -9,4 +9,12 @@ Aufgabe 1 - CSS
     Das Boxmodell ist wichtig für Design und layout.
 
     Das kann man bei CSS leicht mit der Eigenschaft "font-family" definieren bzw generell mit der Eigenschaft "font-.....".
-    
+
+
+Aufgabe 3 - SASS mit SCSS-Syntax
+    Bei großen Website-Projekten wird die CSS-Datei immer unübersichtlicher und länger. Da schreibt man dann Code möglicherweise doppelt und dreifach.
+    Wenn man etwas am Aussehen verändern will muss man zuerst die richtige Stelle finden.
+    Durch SASS kann man Werte wiederverwänden, Passagen wiederholen sich nicht und es entstehen keine Fehler.
+    Mit SASS kann man Variablen benutzen, Code verschachteln, man kann sich Vorlagen speichern die man immer wieder benutzen kann,
+    man kann Dateien importieren die dann zu einer CSS-Datei werden. MAn kann auch mit Inheritance arbeiten.
+    Plus kann man auch Operator benutzen wenn man einmal ein Wert ausrechnen muss.

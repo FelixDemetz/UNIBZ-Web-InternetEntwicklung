@@ -1,0 +1,46 @@
+$width: 500px;
+
+@mixin animationPlane {
+	margin-top: 17px;
+	width: 204px;
+	position: relative;
+	animation-name: slide;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+}
+
+@mixin headerSettings {
+    position: relative;
+	background-image:url("clouds.jpg");
+	border: 1px solid navy;
+	height: 120px;
+	width: $width;
+}
+
+body{
+    font-family: Verdana;
+    width: 750px;
+}
+
+header{
+    @include headerSettings();
+}
+
+#plane_img{
+    @include animationPlane();
+}
+
+@keyframes slide {
+    0% {left: 0px;}
+	50% {left: ($width - 204px);transform: scaleX(-1)}
+	100% {left: 0px;}
+}
+
+section{
+    h1{
+	color: red;
+    }
+
+	float:left;
+	width: $width;
+}
