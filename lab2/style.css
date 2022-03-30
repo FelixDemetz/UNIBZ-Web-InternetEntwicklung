@@ -1,0 +1,21 @@
+body {
+	font-family: Verdana;
+	width: 750px
+}
+
+header {
+	position: relative;
+	background-image:url("clouds.jpg");
+	border: 1px solid navy;
+	height: 120px;
+	width: 500px;
+}
+
+section {
+	float:left;
+	width: 500px;
+}
+
+section h1 {
+	color: red;		
+}
