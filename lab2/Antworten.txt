@@ -1,0 +1,12 @@
+Aufgabe 1 - CSS
+    Selektoren braucht man um die richtigen Elemente der HTML-Dateii auszuwählen.
+    Es gibt type Selektoren, z.B: "p" selektiert alle p Tags in der HTML-Datei;
+    Klassen-Selektoren, z.B: ".container" selektiert alle Tags mit der Klasse ".container" im class-Attribut;
+    ID-Selektoren, z.B: "#logo" selektiert alle Tags mit dem id-Attribut "logo";
+    Ein zusätzlicher Selektor ist "*", dieser Selektor selektiert alle Tags.
+
+    Unter Boxmodell versteht man die Box die jedes HTML-Element umhüllt. Die Box besteht aus margin, border, padding und das Element selbst.
+    Das Boxmodell ist wichtig für Design und layout.
+
+    Das kann man bei CSS leicht mit der Eigenschaft "font-family" definieren bzw generell mit der Eigenschaft "font-.....".
+    

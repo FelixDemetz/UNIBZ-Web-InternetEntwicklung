@@ -11,6 +11,21 @@ header {
 	width: 500px;
 }
 
+#plane_img{
+	margin-top: 17px;
+	width: 204px;
+	position: relative;
+	animation-name: slide;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes slide{
+	0% {left: 0px;}
+	50% {left: 296px;transform: scaleX(-1)}
+	100% {left: 0px;}
+}
+
 section {
 	float:left;
 	width: 500px;
