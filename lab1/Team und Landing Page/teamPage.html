@@ -27,10 +27,7 @@
                         <i id="burgerbtn" class="fa fa-bars"></i>
                     </div>
                 </a>
-                <a id="nav1" class="nav1" href="#1" onclick="myFunction()">Showcase</a>
-                <a id="nav2" class="nav2" href="#2" onclick="myFunction()">Team</a>
-                <a id="nav3" class="nav3" href="#3" onclick="myFunction()">Hier sind wir</a>
-                <a id="nav4" class="nav4" href="#4" onclick="myFunction()">"?"</a>
+                <a id="nav1" class="nav1" href="#1" onclick="myFunction()">Team</a>
             </div>
         </div>
         
@@ -82,35 +79,33 @@
 
     <script> /* In der Navbar wird zwischen "nav" und "nav responsive" gewechselt wenn der icon gedrückt wird */
         function myFunction() {
-          var x = document.getElementById("myTopnav");
-          if (x.className === "nav") {
-            x.className += " responsive";
-          } else {
-            x.className = "nav";
-          }
+            var x = document.getElementById("myTopnav");
+            if (x.className === "nav") {
+                x.className += " responsive";
+            } else {
+                x.className = "nav";
+            }
         }
     </script>
 
-    <script>
+    <script> /* Shows text and hides it (under the foto of the Teammembers) */
         function myFunction2() {
-        var x = document.getElementById("hideText");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
+            var x = document.getElementById("hideText");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
         }
+
+        function myFunction3() {
+            var x = document.getElementById("hideText2");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
         }
     </script>
-
-<script>
-    function myFunction3() {
-    var x = document.getElementById("hideText2");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-    }
-</script>
         
 </html>
