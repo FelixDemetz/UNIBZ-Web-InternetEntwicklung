@@ -17,26 +17,26 @@ $width: 500px;
 	width: $width;
 }
 
-body{
+body {
     font-family: Verdana;
     width: 750px;
 }
 
-header{
+header {
     @include headerSettings();
 }
 
-#plane_img{
+#plane_img {
     @include animationPlane();
 }
 
-@keyframes slide {
-    0% {left: 0px;}
-	50% {left: ($width - 204px);transform: scaleX(-1)}
-	100% {left: 0px;}
-}
+// @keyframes slide {
+//     0% {left: 0px;}
+// 	50% {left: ($width - 204px);transform: scaleX(-1)}
+// 	100% {left: 0px;}
+// }
 
-section{
+section {
     h1{
 	color: red;
     }

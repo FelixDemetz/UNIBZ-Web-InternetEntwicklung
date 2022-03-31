@@ -1,20 +1,20 @@
 Aufgabe 1 - CSS
-    Selektoren braucht man um die richtigen Elemente der HTML-Dateii auszuwählen.
-    Es gibt type Selektoren, z.B: "p" selektiert alle p Tags in der HTML-Datei;
-    Klassen-Selektoren, z.B: ".container" selektiert alle Tags mit der Klasse ".container" im class-Attribut;
-    ID-Selektoren, z.B: "#logo" selektiert alle Tags mit dem id-Attribut "logo";
+    Selektoren braucht man um die richtigen Elemente der HTML-Datei auszuwählen.
+    Es gibt:
+    -type-Selektoren, z.B: "p" selektiert alle p Tags in der HTML-Datei;
+    -Klassen-Selektoren, z.B: ".container" selektiert alle Tags mit der Klasse ".container" im class-Attribut;
+    -ID-Selektoren, z.B: "#logo" selektiert alle Tags mit dem id-Attribut "logo";
     Ein zusätzlicher Selektor ist "*", dieser Selektor selektiert alle Tags.
 
     Unter Boxmodell versteht man die Box die jedes HTML-Element umhüllt. Die Box besteht aus margin, border, padding und das Element selbst.
-    Das Boxmodell ist wichtig für Design und layout.
+    Das Boxmodell ist wichtig für Design und Layout.
 
-    Das kann man bei CSS leicht mit der Eigenschaft "font-family" definieren bzw generell mit der Eigenschaft "font-.....".
-
+    Verschiedene Schriftarten können mit CSS mit der Eigenschaft "font-family" definieren, bzw. generell mit der Eigenschaft "font-.....", definiert werden.
 
 Aufgabe 3 - SASS mit SCSS-Syntax
     Bei großen Website-Projekten wird die CSS-Datei immer unübersichtlicher und länger. Da schreibt man dann Code möglicherweise doppelt und dreifach.
     Wenn man etwas am Aussehen verändern will muss man zuerst die richtige Stelle finden.
-    Durch SASS kann man Werte wiederverwänden, Passagen wiederholen sich nicht und es entstehen keine Fehler.
+    Durch SASS kann man Werte wiederverwänden, Passagen wiederholen sich nicht und es entstehen wenigere Fehler.
     Mit SASS kann man Variablen benutzen, Code verschachteln, man kann sich Vorlagen speichern die man immer wieder benutzen kann,
-    man kann Dateien importieren die dann zu einer CSS-Datei werden. MAn kann auch mit Inheritance arbeiten.
-    Plus kann man auch Operator benutzen wenn man einmal ein Wert ausrechnen muss.
+    man kann Dateien importieren die dann zu einer CSS-Datei werden. Man kann auch mit "Inheritance" arbeiten.
+    Plus kann man auch Operatoren benutzen wenn man einmal ein Wert ausrechnen muss.
