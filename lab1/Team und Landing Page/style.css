@@ -48,10 +48,10 @@ p {
 }
 
 h1 { /* Titel over Texts */
-    color: var(--farbe2) !important;
+    color: black !important;
     margin-bottom: 60 !important;
     font-size: 70px !important;
-    text-align: left;
+    text-align: center;
 }
 
 h2 { /* Little title in round section */
