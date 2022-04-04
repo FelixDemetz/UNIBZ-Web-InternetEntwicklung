@@ -86,7 +86,15 @@ h2 { /* Little title in round section */
     background-position: center top;
 }
 
-/* Section News */
+/* Element with roundet border */
+#container2 {
+    border-bottom: 100;
+    background-color:var(--containerclr);
+    border-radius: var(--brd-radius);
+    background-repeat: no-repeat;
+}
+
+/* tree little*/
 #container3 {
     overflow: hidden; /* img on hover will not exeed border */
     padding: 0 !important;
@@ -109,12 +117,6 @@ h2 { /* Little title in round section */
 #containerFotoTeam{
     max-width: 50%;
     float: left;
-}
-
-.textbox-c3 {
-    padding: 20;
-    overflow: hidden ; /* img on hover will not exeed border */
-    background-color: var(--containerclr);
 }
 
 #container3:hover .foto-container3 {
@@ -144,14 +146,6 @@ h2 { /* Little title in round section */
 
 #container3:hover .overlay {
     opacity: 0.25;
-}
-
-/* Element with roundet border */
-#container2 {
-    border-bottom: 100;
-    background-color:var(--containerclr);
-    border-radius: var(--brd-radius);
-    background-repeat: no-repeat;
 }
 
 .bgg {  /* Foto in bg at the top of the page */
@@ -256,21 +250,12 @@ i {  /* Damit der Burger Icon (für Mobile) in der vertikalen Mitte ist */
     font-size: 18px;
 }
 
-.navbar-brand {
-    padding: 0 !important;
-    position: absolute;
-    fill: var(--navtextfarbe);
-    right: 50%;
-    margin-right: -20px !important;  /* 50% of your logo width */
-}
-
 .navbar-brand1 {
-    padding: 0 !important;
     font-size: 40px !important;
     position: absolute;
     fill: var(--navtextfarbe);
     right: 50%;
-    margin-right: -162px !important;  /* 50% of your logo width */
+    transform: translate(50%, -20%); /* x and y*/
 }
 
 .navbar-brand1:hover, .navbar-brand1:focus, .navbar-brand1:active {
@@ -334,8 +319,16 @@ a#nav1.nav1 {
 }
 
 
-@media (max-width: 1025px) { /*     MOBILE VERSION       MOBILE VERSION     MOBILE VERSION    MOBILE VERSION 1025PX  */
- 
+/*     MOBILE VERSION       MOBILE VERSION     MOBILE VERSION    MOBILE VERSION     MOBILE VERSION       MOBILE VERSION*/
+
+
+@media (max-width: 800px) {
+    .fa.fa-bars::after { /* there is no "menu" txt near burger btn when little screen */ 
+        content: "";
+    }
+}
+
+@media (max-width: 1025px) {
 
 .container {
     padding: 0 10 0 10 !important;
