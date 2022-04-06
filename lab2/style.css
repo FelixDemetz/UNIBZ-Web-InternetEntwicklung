@@ -1,38 +1,54 @@
 body {
-	font-family: Verdana;
-	width: 750px
+  font-family: Verdana;
+  width: 750px;
 }
 
 header {
-	position: relative;
-	background-image:url("clouds.jpg");
-	border: 1px solid navy;
-	height: 120px;
-	width: 500px;
+  position: relative;
+  background-image: url("clouds.jpg");
+  border: 1px solid navy;
+  height: 120px;
+  width: 500px;
 }
 
-#plane_img{
-	margin-top: 17px;
-	width: 204px;
-	position: relative;
-	animation-name: slide;
-	animation-duration: 10s;
-	animation-iteration-count: infinite;
+#plane_img {
+  margin-top: 17px;
+  width: 204px;
+  position: relative;
+  animation-name: slide;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
 }
 
-@keyframes slide{
-	0% {left: 0px; transform: rotateY(180deg);}
-	48% {left: 296px; transform: rotateY(180deg)}	/*dreht sich ganz zuletzt*/
-	50% {left: 296px; transform: rotateY(0deg);}
-	98% {left: 0px; transform: rotateY(0deg);}
-	100% {left: 0px; transform: rotateY(180deg);}
+@keyframes slide {
+  0% {
+    left: 0px;
+    transform: rotateY(180deg);
+  }
+  48% {
+    left: 296px;
+    transform: rotateY(180deg);
+  }
+  /*dreht sich ganz zuletzt*/
+  50% {
+    left: 296px;
+    transform: rotateY(0deg);
+  }
+  98% {
+    left: 0px;
+    transform: rotateY(0deg);
+  }
+  100% {
+    left: 0px;
+    transform: rotateY(180deg);
+  }
 }
-
 section {
-	float:left;
-	width: 500px;
+  float: left;
+  width: 500px;
+}
+section h1 {
+  color: red;
 }
 
-section h1 {
-	color: red;		
-}
+/*# sourceMappingURL=style.css.map */
