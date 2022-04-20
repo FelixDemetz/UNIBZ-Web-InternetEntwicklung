@@ -20,8 +20,7 @@
 				<div class="row form-group">
 					<div class="col-12 col-lg-6">
 						<label for="calendar">Date of concert:</label>
-							<select
-							name="calendar" class="form-select">
+							<select name="calendar" class="form-select" required>
 							<option value="">Select a date</option>
 							<option>01.04.2020</option>
 							<option>02.04.2020</option>
@@ -30,30 +29,35 @@
 							<option>05.04.2020</option>
 							<option>06.04.2020</option>
 						</select>
+						<div class="invalid-feedback">Please choose a date!</div>
 					</div>
 					<div class="col-12 col-lg-6">
 						<label for="location">Location</label>
 						<div class="form-check">
 							<div class="form-check-inline">
-								<input class="form-check-input" id="bolzano"name="location" type="radio">
+								<input class="form-check-input" id="bolzano"name="location" type="radio" required>
 								<label class="form-check-label" for="bolzano">Bolzano/Bozen</label>
 							</div>
 							<div class="form-check-inline" style="margin: 20px;">
-								<input class="form-check-input form-check-inline" id="merano" name="location" type="radio">
+								<input class="form-check-input form-check-inline" id="merano" name="location" type="radio" required>
 								<label class="form-check-label" for="merano">Merano/Meran</label>
+								
 							</div>
-						</div>
+							<div class="invalid-feedback">Please choose a Location!</div>
+						</div>	
 					</div>
 				</div>
 
 				<div class="form-group row mb-3">
 					<div class="col-12 col-lg-6">
-					<label for="firstName">First name</label>
-					<input class="form-control" type="text" id="firstName" placeholder="" value=""> 
-						</div>
+						<label for="firstName">First name</label>
+						<input class="form-control" type="text" id="firstName" placeholder="" value="" required>
+						<div class="invalid-feedback">Please insert your name!</div>
+					</div>
 					<div class="col-12 col-lg-6">
 						<label for="lastName">Last name</label>
-						<input class="form-control" type="text" id="lastName" placeholder="" value="">
+						<input class="form-control" type="text" id="lastName" placeholder="" value="" required>
+						<div class="invalid-feedback">Please insert your lastname!</div>
 					</div>
 				</div>
 
@@ -99,5 +103,26 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
+	<script>// Example starter JavaScript for disabling form submissions if there are invalid fields
+		(function () {
+		  'use strict'
+		
+		  window.addEventListener('load', function () {
+			// Fetch all the forms we want to apply custom Bootstrap validation styles to
+			var forms = document.getElementsByClassName('needs-validation')
+		
+			// Loop over them and prevent submission
+			Array.prototype.filter.call(forms, function (form) {
+			  form.addEventListener('submit', function (event) {
+				if (form.checkValidity() === false) {
+				  event.preventDefault()
+				  event.stopPropagation()
+				}
+				form.classList.add('was-validated')
+			  }, false)
+			})
+		  }, false)
+		}())
+		</script>
 </body>
 </html>
