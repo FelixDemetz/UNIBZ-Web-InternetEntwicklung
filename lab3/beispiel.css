@@ -1,17 +1,13 @@
-.container {
-    box-sizing: border-box;
-    padding: 10px;
-}
-
-.cont-green {
+.c {
     background-color: greenyellow;
+    padding: 20px;
+    text-align: center;
 }
 
-.thirds {
+#thirds {
     display: inline;
     float: left;
-    max-width: 30%;
-    padding: 0.5%;
+    padding: 20px;
 }
 
 h1 {
