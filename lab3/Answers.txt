@@ -6,4 +6,4 @@ Aufgabe 1:
 
 3. Vieles ist schon vorprogrammiert und kann dann beliebig oft wiederverwendet werden. Frameworks erleichtern dem Entwickler die Arbeit und der Entwickler erspart sich auch viel Zeit, wenn er mit Frameworks arbeitet.
 
-4. Mit Bootstrap kann man ein responsives Design umsetzen indem man mit den "class: col" arbeitet. Insgesamt gibt es 12 Spalten. Auf einem großen Display werden meistens mehrere Elemente in einer Zeile dargestellt, verkleinert sich das Display so ist dann meistens kein Platz für alle Elemente in einer Reihe.  Je nach Bildschirm-Größen kann man dann auch verschiedene "col" Classen benutzen wie lg für large (Computer) und sm für small (Smartphone).
+4. Mit Bootstrap kann man ein responsives Design umsetzen indem man mit den "class: col" arbeitet. Insgesamt gibt es 12 Spalten. Auf einem großen Display werden meistens mehrere Elemente in einer Zeile dargestellt, verkleinert sich das Display so ist dann meistens kein Platz für alle Elemente in einer Reihe.  Je nach Bildschirm-Größen kann man dann auch verschiedene "col" Klassen benutzen wie lg für large (Computer) und sm für small (Smartphone).
