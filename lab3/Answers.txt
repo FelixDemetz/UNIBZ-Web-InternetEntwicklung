@@ -1,0 +1,9 @@
+Aufgabe 1:
+
+1. Responsive Design ist, wenn sich eine Webseite automatisch an verschiedenen Display-größen anpasst, gut aussieht und für eine Bedienung mit Tastatur, Mouse und Fingerbedienung ausgerichtet ist.
+
+2. Um ein responsives Design zu haben muss man im Header ein <meta> Tag und Viewport erstellen. Im css-File muss man dann mit der Größe (width und height) spielen. Durch Bootstrap kann man dann ganz einfach ein Grid-Layout benutzen. Siehe: Beispiel.html und beispiel.css.
+
+3. Vieles ist schon vorprogrammiert und kann dann beliebig oft wiederverwendet werden. Frameworks erleichtern dem Entwickler die Arbeit und der Entwickler erspart sich auch viel Zeit, wenn er mit Frameworks arbeitet.
+
+4. Mit Bootstrap kann man ein responsives Design umsetzen indem man mit den "class: col" arbeitet. Insgesamt gibt es 12 Spalten. Auf einem großen Display werden meistens mehrere Elemente in einer Zeile dargestellt, verkleinert sich das Display so ist dann meistens kein Platz für alle Elemente in einer Reihe.  Je nach Bildschirm-Größen kann man dann auch verschiedene "col" Classen benutzen wie lg für large (Computer) und sm für small (Smartphone).
