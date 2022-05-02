@@ -237,7 +237,7 @@ i {  /* Damit der Burger Icon (für Mobile) in der vertikalen Mitte ist */
 
 /* NAVBAR */
 
-#myTopnav.nav {
+#myTopnav {
     padding: 0 2% 0 2% !important;
     border-bottom-width: 3;
     border-bottom-style: solid;
@@ -264,10 +264,9 @@ i {  /* Damit der Burger Icon (für Mobile) in der vertikalen Mitte ist */
 
 .navbar-brand1 {
     font-size: 40px !important;
-    position: absolute;
+    padding-right: 2%;
+    /* position: absolute; */
     fill: var(--navtextfarbe);
-    right: 50%;
-    transform: translate(50%, -20%); /* x and y*/
 }
 
 .navbar-brand1:hover, .navbar-brand1:focus, .navbar-brand1:active {
@@ -293,9 +292,9 @@ a#navlang.navlang:hover, a#navlang.navlang:focus, a#navlang.navlang:active {
     outline: 0;
 }
 
-/* RESP NAVBAR*/
+/** RESP NAVBAR*/
 
-.nav a:not(:first-child) {display: none;} /* icon and navlang do not display: none */
+/* .nav a:not(:first-child) {display: none;} /* icon and navlang do not display: none
   .nav a.icon, .nav a.navlang {
       display: inline-block;
 }
@@ -314,16 +313,16 @@ a#nav1.nav1 {
     padding-top: 64px !important;
 }
 
-.fa.fa-bars::after { /* Add menu txt to ham button */ 
+.fa.fa-bars::after { /* Add menu txt to ham button 
 	content: "Menu";
 	padding-left: 10px;
     font-family: var(--text);
     font-size: 18px;
 }
 
-.fa.fa-bars:hover { /* Hover on Haburgerbutton and Menu txt */ 
+.fa.fa-bars:hover { /* Hover on Haburgerbutton and Menu txt 
     color: var(--navfarbe2) !important;  
-}
+} */
 
 /* IMPRESSUM UND PRIVACY */
 .fat-h {

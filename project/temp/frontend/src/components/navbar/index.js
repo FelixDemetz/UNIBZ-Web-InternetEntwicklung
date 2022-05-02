@@ -4,18 +4,14 @@ import "../../style.css"
 
 const NavBar = () => (
 	
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  	<div class="container-fluid">
-    <a class="navbar-brand1" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+	<nav class="navbar navbar-expand-lg nav">
+  	<div class="container-fluid" id="myTopnav">
+    <a class="navbar-brand1" href="#">FreeCon</a>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link active" href="#">Features</a>
-        <a class="nav-link active" href="#">Pricing</a>
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <a class="nav-link" aria-current="page" href="#">Feed</a>
+        <a class="nav-link" href="#">Discover</a>
+        <a class="nav-link" href="#">Chat</a>
       </div>
     </div>
   </div>

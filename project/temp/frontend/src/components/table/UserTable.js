@@ -35,7 +35,7 @@ const UserTable = props => (
 								class="btn"
 								onClick={() => props.deleteUser(user.id)}>
 								delete
-							</button>
+							</button> 
                         </td> 
                     </tr>
                     ))
