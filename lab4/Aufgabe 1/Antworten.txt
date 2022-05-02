@@ -1,0 +1,12 @@
+WIE - Lab 5
+Vierte Aufgabe
+
+1.
+Die wichtigsten Verwendungszwecke von AJAX (= Asynchronous JavaScript and XML) sind es, einen Austausch von Informationen zwischen Webseite (Frontend) und dem Server (Backend) zu haben, ohne dass die Seite neu geladen werden muss. Beispiel: beim eintragen von Wörtern in der Google "suchen" Zeile, werden Suchvorschläge angezeigt. AJAX ist Browser- und Platformunabhängig.
+
+2.
+Das JQuery framework hilft den Entwickler die Scriptsprache JavaScript Ausführlicher zu verwänden. Mehrere größere Webseiten (Twitter, Amazon, eBay, ...) verwenden diesen Plugin um das schreiben der JS Sprache zu vereinfachen. Man kann mit dem $-Operator auf JQuery zugriff bekommen, Klassen verwalten, Funktionen von Selektoren verketten, Tag Attribute und Inhalte manipulieren und vieles mehr.
+
+3.
+DOM (= Document Object Model) ist ein W3C-Standart der die einzelnen Elemente einer WS in einer Objekthierarchie darstellt. Durch DOM kann man browserunabhängige Skripte programmieren.
+Man kann Elemente ansprechen, verändern, kopieren, hinzufügen, entfernen, uns.

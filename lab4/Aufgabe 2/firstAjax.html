@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content="WIE Assigment for Lab5">
+<title>My first Ajax webpage!</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+
+	<h1>This is my first Ajax webpage!</h1>
+	<div id="demo">
+		<p>This is the original content!</p>
+	</div>
+	<button type="button" id="button1" onclick="loadDoc()">Change Page Content</button>
+	<button type="button" id="button2" onclick="resetDoc()" hidden="true">Reset Page Content</button>
+
+	<script> // in this script tag we will handle two btns, one loading a txt, the second resetting the text
+		var id = demo;
+		
+		function loadDoc() {
+			var http = new XMLHttpRequest;
+			http.open('get', 'content.txt', true) // 1. parameter: method of transfer, 2. which element, 3. syncron (true) or asincron
+				jQuery.get('content.txt', function(newText) { // Help from https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_ajax_get
+   				$('#demo').replaceWith(newText); // Help form: https://api.jquery.com/replacewith/
+			});
+			$("#button1").hide();
+			$("#button2").show();
+		}
+		
+		function resetDoc() {
+			$("p").replaceWith(id);
+			$("#button2").hide();
+			$("#button1").show();
+		}
+	</script>
+
+</body>
+</html>
