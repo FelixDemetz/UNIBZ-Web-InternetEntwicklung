@@ -1,19 +1,25 @@
 import React from 'react';
-import "../../style.css";
+import "../../style.css"
+
 
 const NavBar = () => (
 	
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  		<div class="container-fluid">
-    		<a class="navbar-brand" href="#">FreeCon</a>
-	    </div>
-		<div>
-			<a id="nav1" class="nav1" href="#1" onclick="myFunction()">Our idea</a>
-                <a id="nav2" class="nav2" href="#2" onclick="myFunction()">Team</a>
-                <a id="nav3" class="nav3" href="#3" onclick="myFunction()">Values</a>
-                <a id="nav4" class="nav4" href="#4" onclick="myFunction()">We are here</a>
-		</div>
-	</nav>
+  	<div class="container-fluid">
+    <a class="navbar-brand1" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link active" href="#">Features</a>
+        <a class="nav-link active" href="#">Pricing</a>
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </div>
+    </div>
+  </div>
+</nav>
 );
 
 export default NavBar;

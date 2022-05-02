@@ -7,7 +7,7 @@
     --footerfarbe: black;
     
     --border: 2px solid var(--nav-bg);
-    --brd-radius: 30px;
+    --brd-radius: 40px;
 
     --containerclr: rgb(187, 183, 183);
 
@@ -55,7 +55,6 @@ h1 { /* Titel over Texts */
 }
 
 h2 { /* Little title in round section */
-    padding-bottom: 30px;
     color: var(--farbe2) !important;
     margin: 10 0 10 0 !important;
     font-size: 40px !important;
