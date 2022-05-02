@@ -1,0 +1,1 @@
+<p>This is a newly freshed generated content read form a file</p>
