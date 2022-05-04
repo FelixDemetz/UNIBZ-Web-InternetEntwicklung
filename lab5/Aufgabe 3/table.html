@@ -16,13 +16,13 @@
 <body>
 	<div class="container">
 		<h1>Products</h1>
-		<table class="table">
+		<table class="table"> <!-- This is a Bootstrap table -->
 			<thead>
 				<tr>
 					<th scope="col">#</th>
 					<th scope="col">Name</th>
-					<th scope="col">Quantity</th>
-					<th scope="col">Price</th>
+					<th scope="col">Anzahl</th>
+					<th scope="col">Preis</th>
 				</tr>
 			</thead>
 			<tbody id="tableBody">
@@ -34,7 +34,7 @@
 			<button type="button" class="btn btn-danger btn-sm" onclick="clearTable()">Clear</button>
 		</div>
 		<script>
-			function loadDoc() {
+			function loadDoc() { // loads the elements form the products.json file into the table
 				var xhttp = new XMLHttpRequest();
 				xhttp.onreadystatechange = function() {
 					if (this.readyState == 4) {
@@ -57,7 +57,7 @@
 									+ data.price + '</td>' + '</tr>';
 				}
 			}
-			function clearTable() {
+			function clearTable() { // clears the table
 				document.getElementById("tableBody").innerHTML = ""
 			}
 		</script>
