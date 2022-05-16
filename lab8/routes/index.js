@@ -19,6 +19,7 @@ router.get('/', (req, res, next) => {
 				'<td>' + el['title'] + '</td>' + 
 				'<td>' + el['author'] + '</td>' + 
 				'<td><a href="/book?isbn=' + el['isbn'] + '">Detail</a></td>' + 
+				'<td><a href="/book/delete?isbn=' + el['isbn'] + '">Delete</a></td>' +
 				'</tr>'
 		);
 		page = page.replace('{%table%}', table_html)

@@ -63,4 +63,26 @@ router.post('/newBook', urlencodedParser, (req, res) => {
 
 })
 
+router.get('/delete', (req, res, next) => {
+	console.log(req.query);
+	
+	if ('isbn' in req.query 
+				&& req.app.locals.books.find(b => b.isbn === req.query.isbn) !== undefined) {
+		
+		let curbook = req.app.locals.books.find(function (b) {return b.isbn === req.query.isbn});
+		// var isbn = curbook.body.isbn;
+
+		for(var i = 0; i < req.app.locals.books.length; i++){
+			if(req.app.locals.books[i] === curbook){
+				req.app.locals.books.splice(i, 1);
+			}
+		}
+
+		res.redirect(req.get('referer'));
+	} else {
+		res.status(404).sendFile(path.join(__dirname, '..', 'views', 'bookNotFound.html'))
+	}
+
+})
+
 module.exports = router; 
