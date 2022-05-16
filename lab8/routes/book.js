@@ -7,7 +7,6 @@ const bodyParser = require('body-parser')
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 
-// /admin/add
 router.get('/', (req, res, next) => {
 	console.log(req.query);
 	
