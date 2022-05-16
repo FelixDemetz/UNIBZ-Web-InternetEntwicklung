@@ -9,7 +9,7 @@ const { allowedNodeEnvironmentFlags } = require('process')
 
 const app = express()
 
-app.locals.books = [
+app.locals.books = [ // maybe a stack?
 		{isbn: '1', title: 'Book1', author: 'Markus Zanker',
 		 description: 'Lorem ipsum dolor sit amit', },
 		{isbn: '2', title: 'Book2', author: 'Max Mustermann',

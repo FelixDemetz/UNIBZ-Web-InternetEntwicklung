@@ -36,7 +36,7 @@ router.get('/', (req, res, next) => {
 
 })
 
-router.get('/newBook', (req, res, next) => {
+router.get('/newBook', (req, res, next) => { // opens the newBook.html
 
 	fs.readFile(path.join(__dirname, '..', 'views', 'newBook.html'), 'utf8', (err, page) => {
 		if (err) {
@@ -49,7 +49,7 @@ router.get('/newBook', (req, res, next) => {
 	});
 })
 
-router.post('/newBook', urlencodedParser, (req, res) => {
+router.post('/newBook', urlencodedParser, (req, res) => { // pushes (adds) the book to the stack (array)
 
 	var isbn = req.body.isbn;
 	var title = req.body.title;
@@ -63,14 +63,13 @@ router.post('/newBook', urlencodedParser, (req, res) => {
 
 })
 
-router.get('/delete', (req, res, next) => {
+router.get('/delete', (req, res, next) => { // splices (removes) the book from the stack (array)
 	console.log(req.query);
 	
 	if ('isbn' in req.query 
 				&& req.app.locals.books.find(b => b.isbn === req.query.isbn) !== undefined) {
 		
 		let curbook = req.app.locals.books.find(function (b) {return b.isbn === req.query.isbn});
-		// var isbn = curbook.body.isbn;
 
 		for(var i = 0; i < req.app.locals.books.length; i++){
 			if(req.app.locals.books[i] === curbook){
@@ -80,7 +79,7 @@ router.get('/delete', (req, res, next) => {
 
 		res.redirect(req.get('referer'));
 	} else {
-		res.status(404).sendFile(path.join(__dirname, '..', 'views', 'bookNotFound.html'))
+		res.status(404).sendFile(path.join(__dirname, '..', 'views', 'bookNotFound.html')) // opens a new page like "page not found"
 	}
 
 })
