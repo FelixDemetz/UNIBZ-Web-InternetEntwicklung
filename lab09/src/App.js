@@ -22,15 +22,16 @@ function ToDo({ toDo, index, markToDo }) {
   );
 }
 
-function ToDoList({ toDoList, markToDo }) {
+function ToDoList({ toDoList, markToDo, deleteCompTask }) {
     return (
         <div>
             {toDoList.map((toDo, index) => {
                 return (
                     <ToDo key={toDo.priority + toDo.task} 
-													toDo={toDo} index={index} markToDo={markToDo} />
+													toDo={toDo} index={index} markToDo={markToDo} deleteCompTask={deleteCompTask} />
                 )
             })}
+            <button style={{marginTop: "15px"}} onClick={deleteCompTask}>Remove completed tasks</button>
         </div>
     );
 };
@@ -47,11 +48,18 @@ function App() {
     newTodos[index].complete = true;
     setToDoList(newTodos);
   };
-	
+
+  const deleteCompTask = () => {
+    const incompletedToDos = toDoList.filter(toDo => {
+      return toDo.complete === false;
+    });
+    setToDoList(incompletedToDos);
+  }
+ 
   return (
     <div className="App">
       <Header />
-		  <ToDoList toDoList={toDoList} markToDo={markToDo} />
+		  <ToDoList toDoList={toDoList} markToDo={markToDo} deleteCompTask={deleteCompTask}/>
     </div>
   );
 }
