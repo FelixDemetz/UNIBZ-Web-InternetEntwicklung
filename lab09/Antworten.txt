@@ -1,0 +1,8 @@
+7. Aufgabe -React
+    Aufgabe 1 - CSS
+        - ReactJS erstellt verkapselte Komponenten, die ihren eigenen Zustand verwalten. Die Komponenten werden durch einer render() Met. zusammengestellt.
+        Bei einem undirektionalen Datenfluss wird kein komplexes Event handling aufgebaut. Verschalchtelte komponente werden genutzt. Die Daten der Komponenten haben nur statische Eigenschaften.
+
+        - Das heißt, dass sie nicht den Zustand der props ändern können. Sie werden immer das gleiche zurückgeben wenn sie die gleichen props bekommen.
+
+        - Das virtuelle Dom ist eine "Kopie" vom tatsächlichen DOM, die kleiner ist und nur das Nötigste enthält. Deswegen kann sie schneller verändert werden und ist daher der Ort wo die Änderungen vorgenommen werden. Die neue und alte Version werden verglichen, updated und dann übernommen. Da es eine abstraakte Kopie des Doms ist, und das updaten des DOMs schneller funktioniert, ist die ganze Aplication schneller wenn man sachen verändert.
