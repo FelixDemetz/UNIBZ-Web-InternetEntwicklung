@@ -29,7 +29,7 @@ const Login = props => {
             </div>
             <div class="col-6">
                 <input class="btn" type="button" value="Login" onClick={checksUsernameAndPassword}></input>
-                <button class="btn">Create new</button>
+                <button class="btn" href="/check">Create new</button>
             </div>
         </form>
     </div>

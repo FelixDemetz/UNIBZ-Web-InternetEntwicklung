@@ -70,6 +70,14 @@ class Home extends Component {
         this.setEditing(true);
     };
 
+    currentUser = user => {
+        this.setState({ 
+            currentUser: { id: user.id, name: user.name, surname: user.surname, username: user.username, password: user.password, description: user.description}
+        });
+
+        this.setEditing(true);
+    };
+
     setEditing = isEditing => {
         this.setState({ editing: isEditing });
     };

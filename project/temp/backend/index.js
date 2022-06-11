@@ -6,6 +6,7 @@ const UserController = require('./app/controllers/UserController');
 const app = express();
 const port = 3333;
 
+// eslint-disable-next-line
 app.use(express.urlencoded({ extended: false }));
 
 app.use(cors());

@@ -3,8 +3,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const path = require('path')
 
-const detailRoutes = require('./routes/book')
-const listRoutes = require('./routes/index')
+const teamRoutes = require('./routes/teamPage')
+const landingRoutes = require('./routes/landingPage')
 const { allowedNodeEnvironmentFlags } = require('process')
 
 const sqlite3 = require('sqlite3');
@@ -16,8 +16,8 @@ const app = express()
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static('public'));
 
-app.use('/book', detailRoutes)
-app.use(listRoutes)
+app.use('/team', teamRoutes)
+app.use(landingRoutes)
 
 app.use((req, res, next) => {
 	res.status(404).sendFile(path.join(__dirname, 'views', '404.html'))
