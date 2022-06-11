@@ -5,6 +5,7 @@ const path = require('path')
 
 const teamRoutes = require('./routes/teamPage')
 const landingRoutes = require('./routes/landingPage')
+const loginRoutes = require('./routes/loginPage')
 const { allowedNodeEnvironmentFlags } = require('process')
 
 const sqlite3 = require('sqlite3');
@@ -18,6 +19,7 @@ app.use(express.static('public'));
 app.use("/styles/css", express.static(path.join(__dirname, "node_modules/bootstrap/dist/css")));
 
 app.use('/team', teamRoutes)
+app.use('/login', loginRoutes)
 app.use(landingRoutes)
 
 app.use((req, res, next) => {
