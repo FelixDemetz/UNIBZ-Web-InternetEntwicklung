@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <title>Team Page</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width"> <!-- Mobile responsive -->
+        <!-- <meta name="description" content="Meta Text">
+        <meta name="keywords" content="Keywords, Webseitenname, Inhabername uns"> -->
+        <meta name="author" content="Felix Demetz, Lucas Glück">
+        
+        <link rel="stylesheet" type="text/css"   href="/css/style.css">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- Bootsrap Framework -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Menu Icon -->
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- Google Icons -->
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet"> <!-- Font -->
+    </head>
+    
+    <body>
+        <div>
+            <div class="nav" id="myTopnav">
+                <a id="nav0" class="navbar-brand1" href="landingPage.html">FreeCon</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <div>
+                        <i id="burgerbtn" class="fa fa-bars"></i>
+                    </div>
+                </a>
+                <a id="nav1" class="nav1" href="#1" onclick="myFunction()">Team</a>
+            </div>
+        </div>
+        
+        <div id="0" class="bgg" style="background-repeat: no-repeat; background-image: url(https://wallpaperaccess.com/full/2401680.jpg); background-size: cover; background-position: center top; width: 100%; height: 100%; background-color: black">
+            <div class="container">
+                <div class="">
+                    <p style="text-align: right; color: var(--farbe2) !important; font-size: 100px !important; padding-top: 30%;">FreeCon<br></p>
+                    <p style="text-align: right; color: white !important; margin-top: -3%;">connect and be free</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section with big IMG and Text-->
+        <!-- Text opens when clicking on name!-->
+        <div class="section" id="">
+            <div id="1">
+                <div style="background-color:rgb(0, 0, 0); padding: 100 0 100 0px;">
+                    <div class="container">
+                        <h1 style="color: white !important">Our Crew</h1>
+                        <div>
+                            <div class="container" id="containerFotoTeam">
+                                <button onclick="myFunction2()" id="button"><img class="imgTeam" src="felix.jpg" alt="Felix Demetz"><h2>Felix Demetz</h2><h3 style="margin: 0px;">Developer</h3></button>
+                                <p style="display: none;" id="hideText">
+                                    I was born and raised in Ortisei, Val Gardena! I went to a business school before I changed subject and started studying Computer Science this year. When I am not studying or working you always find me outside in the nature or playing football.
+                                    <br><br>Email: <a class="link" href="mailto:fedemetz@unibz.it">fedemetz@unibz.it</a>
+                                </p>
+                            </div>
+                            <div class="container" id="containerFotoTeam">
+                                <button onclick="myFunction3()" id="button"><img class="imgTeam" src="lucas.jpg" alt="Lucas Glück"><h2>Lucas Glück</h2><h3 style="margin: 0px;">Developer</h3></button>
+                                <p style="display: none;" id="hideText2">
+                                    I was born in Selva, now I live in Ortisei and I went to a business highschool. I am in my second year as a Computer Science student. In my free time I like to go skiing or generally in the mountains. I also played icehockey for 15 years.
+                                    <br><br>Email: <a id="hideText" class="link" href="mailto:luglueck@unibz.it">luglueck@unibz.it</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <text class="footertext" id="footercolor">© 2022 FreeCon</text>
+                <text class="footertext" id="footercolor">Developed by <a class="footerlinkfd" id="footercolor" href="https://gitlab.inf.unibz.it/Felix.Demetz/wie_202122_5808">Lucas & Felix</a></text>
+            </div>             
+        </footer>
+    </body> 
+    <!-- PAGE ENDS HERE   PAGE ENDS HERE -->
+
+    <!-- SCRIPTS -->
+    
+    <script href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script> /* In der Navbar wird zwischen "nav" und "nav responsive" gewechselt wenn der icon gedrückt wird */
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "nav") {
+                x.className += " responsive";
+            } else {
+                x.className = "nav";
+            }
+        }
+    </script>
+
+    <script> /* Shows text and hides it (under the foto of the Teammembers) */
+        function myFunction2() {
+            var x = document.getElementById("hideText");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        function myFunction3() {
+            var x = document.getElementById("hideText2");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+        
+</html>
