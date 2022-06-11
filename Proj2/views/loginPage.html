@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<html>
 <html lang="en">
 
 <head>
@@ -33,8 +33,15 @@
                 <input type="password" class="form-control" id="password" name="password" />
             </div>
             <div class="col-6">
-                <input class="btn" type="button" value="Login" onClick={checksUsernameAndPassword}></input>
-                <a style="color:grey !important; font-size: 20" class="link" href="/login/createUser">Create user</a>
+                <button class="button">
+                    <a style="color:white !important; font-size: 20;" class="link" onClick={checksUsernameAndPassword} href="/login/createUser">Login</a>
+                </button>
+                <button class="button">
+                    <a style="color:white !important; font-size: 20;" class="link" href="/login/createUser">Create user</a>
+                </button>
+                <button class="button">
+                    <a style="color:white !important; font-size: 20;" class="link" href="/homePage">to Home</a>
+                </button>
             </div>
         </form>
     </div>

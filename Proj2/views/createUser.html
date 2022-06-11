@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<html>
 <html lang="en">
 
 <head>
@@ -22,20 +22,35 @@
 </head>
 
 <body>
-    <div className="row" id="singlePageSection">
+    <div id="singlePageSection">
         <h2>Create new user</h2>
-        <form id="loginLabels" className="col 6">
+        <form id="loginLabels" className="col 6" action="/login/createUser" method="POST">
             <div class="mb-3 col-6">
-                <label id="testId" class="form-label" htmlFor="bo">Username</label>
-                <input type="text" class="form-control" id="username" name="username"/>
-                <label class="form-label" htmlFor="bo">Password</label>
-                <input type="password" class="form-control" id="password" name="password" />
-            </div>
-            <div class="col-6">
-                <button class="btn" href="/createUser">create</button>
-            </div>
+                <label class="form-label"for="isbn">Name</label>
+                <input type="text" class="form-control" id="name" name="name"/>
+
+                <label class="form-label"for="isbn">Surname</label>
+                <input type="text" class="form-control" id="surname" name="surname"/>
+
+                <label class="form-label"for="isbn">Username ISBN</label>
+                <input type="text" class="form-control" id="username" name="isbn"/>
+
+                <label class="form-label"for="title">Password Title</label>
+                <input type="password" class="form-control" id="password" name="title"/>
+
+                <label class="form-label"for="isbn">Description</label>
+                <input type="text" class="form-control" id="description" name="description"/>
+                <div class="col-6">
+                    <button class="button">
+                        <a style="color:white !important; font-size: 20;" class="link" href="/index">Create</a>
+                    </button>
+                </div>
         </form>
-        <button class="btn" href="/login">back</button>
+        <div class="col-6"></div>
+            <button class="button">
+                <a style="color:white !important; font-size: 20;" class="link"  href="/login">Back</a>
+            </button>
+        </div>
     </div>
 </body>
 
