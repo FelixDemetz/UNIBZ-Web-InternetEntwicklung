@@ -6,7 +6,7 @@ const fs = require('fs')
 
 const sqlite3 = require('sqlite3')
 const { text } = require('express')
-const db = new sqlite3.Database('./addressbook.sqlite');
+const db = new sqlite3.Database('./books.sqlite');
 
 const bodyParser = require('body-parser')
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
@@ -15,11 +15,11 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 router.get('/', (req, res, next) => {
 	console.log(req.query);
 	
-	if ('name' in req.query) {
-		db.all("SELECT * FROM addressbook WHERE name=$name", {$name: req.query.name}, function(err, row) {
+	if ('isbn' in req.query) {
+		db.all("SELECT * FROM books WHERE isbn=$isbn", {$isbn: req.query.isbn}, function(err, row) {
 			if (row.length == 1) {
 				
-				let user = row[0];
+				let curbook = row[0];
 			
 				fs.readFile(path.join(__dirname, '..', 'views', 'detail.html'), 'utf8', (err, page) => {
 					if (err) {
@@ -27,10 +27,10 @@ router.get('/', (req, res, next) => {
 						return;
 					}
 
-					page = page.replace('{%name%}', user.name)
-					page = page.replace('{%username%}', user.username)
-					page = page.replace('{%surname%}', user.surname)
-					page = page.replace('{%description%}', user.description)
+					page = page.replace('{%isbn%}', curbook.isbn)
+					page = page.replace('{%title%}', curbook.title)
+					page = page.replace('{%author%}', curbook.author)
+					page = page.replace('{%description%}', curbook.description)
 
 					res.setHeader('Content-Type', 'text/html')
 					res.write(page)
@@ -79,7 +79,7 @@ router.post('/newBook', urlencodedParser, (req, res) => {
 	var author = req.body.author;
 	var description = req.body.description;
 
-	db.all("INSERT INTO addressbook (isbn, title, author, description) VALUES (?,?,?,?)", [isbn, title, author, description], function(err, rows) {
+	db.all("INSERT INTO books (isbn, title, author, description) VALUES (?,?,?,?)", [isbn, title, author, description], function(err, rows) {
 		if (err) {
 			console.error(err);
 			return;
@@ -93,7 +93,7 @@ router.get('/delete', (req, res, next) => {
 	
 	if ('isbn' in req.query) {
 		
-		db.all("DELETE FROM addressbook where isbn = ?",[isbn], function(err, rows){
+		db.all("DELETE FROM books where isbn = ?",[isbn], function(err, rows){
 			if (err) {
 				console.error(err);
 				return;
