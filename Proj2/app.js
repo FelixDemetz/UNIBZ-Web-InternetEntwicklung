@@ -15,6 +15,7 @@ const app = express()
 	
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static('public'));
+app.use("/styles/css", express.static(path.join(__dirname, "node_modules/bootstrap/dist/css")));
 
 app.use('/team', teamRoutes)
 app.use(landingRoutes)
