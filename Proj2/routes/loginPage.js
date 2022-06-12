@@ -71,4 +71,23 @@ router.post('/createUser', urlencodedParser, (req, res) => {
 	})
 })
 
+router.get('/delete', (req, res, next) => {
+	var isbn = req.query.isbn;
+	
+	if ('isbn' in req.query) {
+		
+		db.all("DELETE FROM books where isbn = ?",[isbn], function(err, rows){
+			if (err) {
+				console.error(err);
+				return;
+			}
+			res.redirect('/index');
+			
+		})
+	} else {
+		res.status(404).sendFile(path.join(__dirname, '..', 'views', 'bookNotFound.html')) // opens a new page like "page not found"
+	}
+
+})
+
 module.exports = router; 

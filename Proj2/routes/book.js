@@ -71,7 +71,7 @@ router.post('/newBook', urlencodedParser, (req, res) => {
 			console.error(err);
 			return;
 		}
-		res.redirect('/');
+		res.redirect('/index');
 	})
 })
 
@@ -85,7 +85,7 @@ router.get('/delete', (req, res, next) => {
 				console.error(err);
 				return;
 			}
-			res.redirect('/');
+			res.redirect('/index');
 			
 		})
 	} else {

@@ -31,7 +31,7 @@ div {
 }
 
 p {
-    color: rgb(255, 255, 255); 
+    color: rgb(43, 43, 43); 
     font-size: 30px !important; 
 }
 
@@ -245,10 +245,11 @@ i {  /* Damit der Burger Icon (für Mobile) in der vertikalen Mitte ist */
 /* NAVBAR */
 
 #myTopnav.nav {
-    padding: 0 2% 65 2% !important;
+    padding: 0 2% 5 2% !important;
     border-bottom-width: 3;
     border-bottom-style: solid;
     border-bottom-color: black;
+    margin-bottom: 50;
 }
 
 .nav {
@@ -298,38 +299,6 @@ a#navlang.navlang:hover, a#navlang.navlang:focus, a#navlang.navlang:active {
     color: var(--navfarbe2);
     text-decoration: none;
     outline: 0;
-}
-
-/* RESP NAVBAR*/
-
-.nav a:not(:first-child) {display: none;} /* icon and navlang do not display: none */
-  .nav a.icon, .nav a.navlang {
-      display: inline-block;
-}
-
-.nav.responsive {position: fixed;}
-  .nav.responsive a.icon {
-      float: left !important;
-}
-
-.nav.responsive a {
-    display: block;
-    text-align: left;
-}
-
-a#nav1.nav1 {
-    padding-top: 64px !important;
-}
-
-.fa.fa-bars::after { /* Add menu txt to ham button */ 
-	content: "Menu";
-	padding-left: 10px;
-    font-family: var(--text);
-    font-size: 18px;
-}
-
-.fa.fa-bars:hover { /* Hover on Haburgerbutton and Menu txt */ 
-    color: var(--navfarbe2) !important;  
 }
 
 /* IMPRESSUM UND PRIVACY */
