@@ -26,37 +26,65 @@
             <div class="nav" id="myTopnav">
                 <a id="nav0" href="#0">FreeCon</a>
                 <a id="nav1" href="#1">{%isbn%}</a>
-                <a id="nav2" href="#2">Post</a>
+                <a id="nav2" href="#2">Feed</a>
+                <a id="nav2" href="#3">Post</a>
             </div>
         </div>
-        
-        <!-- Section "PB and desc." -->
-        <div class="section" id="2">
+
+        <!-- Section profile -->
+        <div class="section" id="1">
             <div class="container">
-                <p>{%isbn%}</p>
+                <h2>{%isbn%}</h2>
                 <p><strong>Titel:</strong>{%title%}</p>
                 <p><strong>Autor:</strong>{%author%}</p>
                 <p><strong>Beschreibung:</strong>{%description%}</p>
                 <a href="/index">Back</a>
-
-                <h2>Here is username + {%isbn%}</h2>
-                <h1 style="color:#000 !important;">Our Crew</h1>
             </div>
-            <div class="container" id="container2">
-                <!-- <div class="col-sm-12 col-md-4 col-lg-4" style= "padding:2%;">
-                    <img class="image" src="https://2hconsulting.it/it/wp-content/uploads/2017/06/team.png"/>
-                </div> -->
-                <div class="col-sm-12 col-md-8 col-lg-8" style= "padding:3%;">
-                    <div class="">
-                        <h2>Postname</h2>
-                        <p style="color:black !important">We don’t pretend to have all the answers. What we do have are goals to strive for, and a global community of businesses committed to doing the right thing by people and the planet.
-                        </p>
-                        <button class="button">
-                            <a style="color:white !important; font-size: 20; display: -inline-flex !important;" class="link" href="/team">like</a>
-                        </button>
-                        <button class="button">
-                            <a style="color:white !important; font-size: 20; display: -inline-flex !important;" class="link" href="/team">dislike</a>
-                        </button>
+        </div>
+
+        <!-- Section post -->
+        <div class="section" id="3">
+            <div class="container">
+                <h2>Post a message</h2>
+                <p><strong>Titel:</strong>{%title%}</p>
+                <p><strong>Autor:</strong>{%author%}</p>
+                <p><strong>Beschreibung:</strong>{%description%}</p>
+                <a href="/index">Back</a>
+            </div>
+        </div>
+        
+        <!-- Section feed -->
+        <div class="section" id="2">
+            <div class="container">
+                <h2>Feeds</h2>
+                <div class="container" id="container2">
+                    <div class="col-sm-12 col-md-8 col-lg-8" style= "padding:3%;">
+                        <div class="">
+                            <h2 style="color:black !important">Post title</h2>
+                            <p style="color:black !important">We don’t pretend to have all the answers. What we do have are goals to strive for, and a global community of businesses committed to doing the right thing by people and the planet.
+                            </p>
+                            <button class="button">
+                                <a style="color:white !important; font-size: 20; display: -inline-flex !important;" class="link" href="/team">like</a>
+                            </button>
+                            <button class="button">
+                                <a style="color:white !important; font-size: 20; display: -inline-flex !important;" class="link" href="/team">dislike</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" id="container2">
+                    <div class="col-sm-12 col-md-8 col-lg-8" style= "padding:3%;">
+                        <div class="">
+                            <h2 style="color:black !important">Post title</h2>
+                            <p style="color:black !important">We don’t pretend to have all the answers. What we do have are goals to strive for, and a global community of businesses committed to doing the right thing by people and the planet.
+                            </p>
+                            <button class="button">
+                                <a style="color:white !important; font-size: 20; display: -inline-flex !important;" class="link" href="/team">like</a>
+                            </button>
+                            <button class="button">
+                                <a style="color:white !important; font-size: 20; display: -inline-flex !important;" class="link" href="/team">dislike</a>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
