@@ -183,6 +183,7 @@ h2 { /* Little title in round section */
 
 .form-label, .form-label-user, td, tr { /* text over input boxes */
     font-size: 20px;
+    padding-bottom: 20px;
 }
 
 .form-label-user { /* text over input boxes */

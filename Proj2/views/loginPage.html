@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<html>
 <html lang="en">
 
 <head>
@@ -22,21 +22,39 @@
 </head>
 
 <body>
-    <div className="row" id="singlePageSection">
-        <h2>Login</h2>
-        <span class="form-label" >Logged in as: <span class="form-label-user" id="userSpan"></span></span>
-        <form id="loginLabels" className="col 6">
-            <div class="mb-3 col-6">
-                <label class="form-label" htmlFor="bo">Username</label>
-                <input type="text" class="form-control" id="username" name="username"/>
-                <label class="form-label" htmlFor="bo">Password</label>
-                <input type="password" class="form-control" id="password" name="password" />
+    <!-- Navbar -->
+    <div>
+        <div class="nav" id="myTopnav">
+            <a id="nav0" class="navbar-brand1" href="#0">FreeCon</a>
+        </div>
+    </div>
+
+    <div class="section" id="">
+        <div class="container">
+            <div className="row" id="singlePageSection">
+                <h2>Login</h2>
+                <span class="form-label" >Logged in as: <span class="form-label-user" id="userSpan"></span></span>
+                <form id="loginLabels" className="col 6">
+                    <div class="mb-3 col-6">
+                        <label class="form-label" htmlFor="bo">Username</label>
+                        <input type="text" class="form-control" id="username" name="username"/>
+                        <label class="form-label" htmlFor="bo">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" />
+                    </div>
+                    <div class="col-6">
+                        <button class="button">
+                            <a style="color:white !important; font-size: 20;" class="link" onClick={checksUsernameAndPassword} href="/login/createUser">Login</a>
+                        </button>
+                        <button class="button">
+                            <a style="color:white !important; font-size: 20;" class="link" href="/login/createUser">Create user</a>
+                        </button>
+                        <button class="button">
+                            <a style="color:white !important; font-size: 20;" class="link" href="/homePage">to Home</a>
+                        </button>
+                    </div>
+                </form>
             </div>
-            <div class="col-6">
-                <input class="btn" type="button" value="Login" onClick={checksUsernameAndPassword}></input>
-                <a style="color:grey !important; font-size: 20" class="link" href="/login/createUser">Create user</a>
-            </div>
-        </form>
+        </div>
     </div>
 </body>
 
