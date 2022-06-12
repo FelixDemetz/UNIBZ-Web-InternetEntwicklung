@@ -22,34 +22,41 @@
 </head>
 
 <body>
-    <div id="singlePageSection">
-        <h2>Create new user</h2>
-        <form id="loginLabels" className="col 6" action="/login/createUser" method="POST">
-            <div class="mb-3 col-6">
-                <label class="form-label"for="name">Name</label>
-                <input type="text" class="form-control" id="name" name="name"/>
+    <div class="section" id="">
+        <div class="container">
+            <div id="singlePageSection">
+                <h2>Create new user</h2>
+                <form id="loginLabels" className="col 6" action="/login/createUser" method="POST">
+                    <div class="mb-3 col-6">
+                        <!-- <label class="form-label"for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name"/> -->
 
-                <label class="form-label"for="surname">Surname</label>
-                <input type="text" class="form-control" id="surname" name="surname"/>
+                        <label class="form-label"for="author">Surname author!</label>
+                        <input type="text" class="form-control" id="author" name="author"/>
 
-                <label class="form-label"for="isbn">Username !</label>
-                <input type="text" class="form-control" id="username" name="isbn"/>
+                        <label class="form-label"for="isbn">Username ISBN!</label>
+                        <input type="number" class="form-control" id="isbn" name="isbn"/>
 
-                <label class="form-label"for="title">Password !</label>
-                <input type="password" class="form-control" id="password" name="title"/>
+                        <label class="form-label"for="title">Password title!</label>
+                        <input type="text" class="form-control" id="title" name="title"/>
 
-                <label class="form-label"for="description">Description !</label>
-                <input type="text" class="form-control" id="description" name="description"/>
-                <div class="col-6">
+                        <label class="form-label"for="description">Description !</label>
+                        <input type="text" class="form-control" id="description" name="description"/>
+                        <div class="col-6">
+                            <button class="button" type="submit">
+                                <a style="color:white !important; font-size: 20;" class="link" href="/index">Create</a>
+                            </button>
+                        </div>
+                </form>
+                <div class="col-6"></div>
                     <button class="button">
-                        <a style="color:white !important; font-size: 20;" class="link" href="/index">Create</a>
+                        <a style="color:white !important; font-size: 20;" class="link"  href="/login">Back</a>
+                    </button>
+                    <button class="button">
+                        <a style="color:white !important; font-size: 20;" class="link" href="/index">See all users</a>
                     </button>
                 </div>
-        </form>
-        <div class="col-6"></div>
-            <button class="button">
-                <a style="color:white !important; font-size: 20;" class="link"  href="/login">Back</a>
-            </button>
+            </div>
         </div>
     </div>
 </body>

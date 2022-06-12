@@ -56,7 +56,7 @@ h1 { /* Titel over Texts */
 
 h2 { /* Little title in round section */
     color: var(--farbe2) !important;
-    margin: 10 0 10 0 !important;
+    margin: 10 0 50 0 !important;
     font-size: 40px !important;
     text-align: left;
 }
@@ -196,6 +196,7 @@ h2 { /* Little title in round section */
 }
 
 .form-control { /* input boxes */
+    width: 50% !important;
     border: 2px solid black !important;
     border-radius: 20px !important;
     margin-bottom: 30px !important;
@@ -244,7 +245,7 @@ i {  /* Damit der Burger Icon (für Mobile) in der vertikalen Mitte ist */
 /* NAVBAR */
 
 #myTopnav.nav {
-    padding: 0 2% 0 2% !important;
+    padding: 0 2% 65 2% !important;
     border-bottom-width: 3;
     border-bottom-style: solid;
     border-bottom-color: black;
@@ -262,7 +263,7 @@ i {  /* Damit der Burger Icon (für Mobile) in der vertikalen Mitte ist */
 
 .nav a {
     font-family: var(--text);
-    padding: 15 30px;
+    padding: 15 15px;
     color: var(--navtextfarbe);
     text-decoration: none;
     font-size: 18px;

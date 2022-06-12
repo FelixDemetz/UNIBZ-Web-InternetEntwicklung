@@ -11,7 +11,7 @@ const db = new sqlite3.Database('./books.sqlite');
 const bodyParser = require('body-parser')
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-
+// /admin/add
 router.get('/', (req, res, next) => {
 	console.log(req.query);
 	
@@ -49,19 +49,6 @@ router.get('/', (req, res, next) => {
 router.get('/newBook', (req, res) => { // opens the newBook.html
 
 	fs.readFile(path.join(__dirname, '..', 'views', 'newBook.html'), 'utf8', (err, page) => {
-		if (err) {
-			console.error(err);
-			return;
-		}
-		res.setHeader('Content-Type', 'text/html')
-		res.write(page)
-		res.end();
-	});
-})
-
-router.get('/page', (req, res) => {
-
-	fs.readFile(path.join(__dirname, '..', 'views', 'teamPage.html'), 'utf8', (err, page) => {
 		if (err) {
 			console.error(err);
 			return;
