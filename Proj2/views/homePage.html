@@ -24,36 +24,42 @@
         <!-- Navbar -->
         <div>
             <div class="nav" id="myTopnav">
-                <a id="nav0" href="#0">FreeCon</a>
-                <a id="nav1" href="#1">{%name%}</a>
-                <a id="nav2" href="#2">Feed</a>
                 <a id="nav2" href="#3">Post</a>
+                <a id="nav2" href="#2">Feed</a>
+                <a id="nav1" href="#1">{%username%}</a>
+                <a id="nav3" href="/login">log out</a>
+                <a style="float: left !important" id="nav0" href="/">FreeCon</a>
             </div>
         </div>
 
         <!-- Section profile -->
         <div class="section" id="1">
             <div class="container">
-                <h2>{%name%} {%surname%}</h2>
-                <p><strong>Username: </strong>{%username%}</p>
-                <p><strong>Password: </strong>{%password%}</p>
-                <p><strong>Beschreibung:</strong>{%description%}</p>
+                <h2>Profile</h2>
+                <p id="profileUsername"></p>
+                <p>Name: {%name%} {%surname%}</p>
+                <p>Beschreibung:<br>{%description%}</p>
                 <a href="/index">Back</a>
             </div>
         </div>
 
-        <!-- Section post -->
+        <!-- Section write own post -->
         <div class="section" id="3">
             <div class="container">
                 <h2>Post a message</h2>
-                <p><strong>Titel:</strong>{%title%}</p>
-                <p><strong>Autor:</strong>{%author%}</p>
-                <p><strong>Beschreibung:</strong>{%description%}</p>
+                <form id="loginLabels" className="col 6" action="" method="POST">
+                    <div>
+                        <label class="form-label" for="description">Connect!</label>
+                        <textarea style="width: 100% !important; height: 100px !important" type="text" class="form-control" id="description" name="description">spread love</textarea>
+                        <div class="col-6">
+                        <button class="button" type="submit">Post</button>
+                    </div>
+                </form>
                 <a href="/index">Back</a>
             </div>
         </div>
         
-        <!-- Section feed -->
+        <!-- Section see all feeds -->
         <div class="section" id="2">
             <div class="container">
                 <h2>Feeds</h2>
@@ -64,10 +70,10 @@
                             <p style="color:black !important">We don’t pretend to have all the answers. What we do have are goals to strive for, and a global community of businesses committed to doing the right thing by people and the planet.
                             </p>
                             <button class="button">
-                                <a style="color:white !important; font-size: 20; display: -inline-flex !important;" class="link" href="/team">like</a>
+                                <a href="">like</a>
                             </button>
                             <button class="button">
-                                <a style="color:white !important; font-size: 20; display: -inline-flex !important;" class="link" href="/team">dislike</a>
+                                <a href="">dislike</a>
                             </button>
                         </div>
                     </div>
@@ -79,10 +85,10 @@
                             <p style="color:black !important">We don’t pretend to have all the answers. What we do have are goals to strive for, and a global community of businesses committed to doing the right thing by people and the planet.
                             </p>
                             <button class="button">
-                                <a style="color:white !important; font-size: 20; display: -inline-flex !important;" class="link" href="/team">like</a>
+                                <a href="">like</a>
                             </button>
                             <button class="button">
-                                <a style="color:white !important; font-size: 20; display: -inline-flex !important;" class="link" href="/team">dislike</a>
+                                <a href="">dislike</a>
                             </button>
                         </div>
                     </div>
@@ -96,6 +102,11 @@
     
     <script href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script> /* Gets the username of the Profile for other tags */
+        let username = document.getElementById("nav1").textContent;
+        document.getElementById("profileUsername").innerHTML = "Username: " + username;
+    </script>
 
     <script> /* In der Navbar wird zwischen "nav" und "nav responsive" gewechselt wenn der icon gedrückt wird */
         function myFunction() {
@@ -130,4 +141,4 @@
         
 </html>
 
-</html> 
+</html>

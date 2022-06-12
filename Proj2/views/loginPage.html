@@ -26,7 +26,7 @@
     <div>
         <div class="nav" id="myTopnav">
             <div>
-                <a id="nav0" href="#0">FreeCon</a>
+                <a style="float: left !important" id="nav0" href="/">FreeCon</a>
             </div>
         </div>
     </div>
@@ -35,28 +35,31 @@
         <div class="container">
             <div className="row" id="singlePageSection">
                 <h2>Login</h2>
-                <form id="loginLabels" className="col 6">
+                <span class="form-label" >Logged in as: <span class="form-label-user" id="userSpan"></span></span>
+                <form id="loginLabels" className="col 6" action="/login/loggedin">
                     <div class="mb-3 col-6">
-                        <label class="form-label" htmlFor="username">Username</label>
+                        <label class="form-label" htmlFor="bo">Username</label>
                         <input type="text" class="form-control" id="username" name="username"/>
-                        <label class="form-label" htmlFor="password">Password</label>
+                        <label class="form-label" htmlFor="bo">Password</label>
                         <input type="password" class="form-control" id="password" name="password" />
+                        <button class="button" type="submit">Login</button>
                     </div>
                     <div class="col-6">
                         <button class="button">
-                            <a style="color:white !important; font-size: 20;" class="link" href="/login/createUser">Login</a>
-                        </button>
-                        <button class="button">
-                            <a style="color:white !important; font-size: 20;" class="link" href="/login/createUser">Create user</a>
-                        </button>
-                        <button class="button">
-                            <a style="color:white !important; font-size: 20;" class="link" href="/homePage">to Home</a>
+                            <a class="link" href="/login/createUser">Register</a>
                         </button>
                     </div>
                 </form>
             </div>
         </div>
+        <h1>All our Books</h1>
+        <table>
+					<thead><tr><th>ISBN</th><th>Title</th><th>Author</th></tr></thead>
+					<tbody>
+					{%table%}
+					</tbody>
+		</table>
     </div>
 </body>
 
-</html> 
+</html>

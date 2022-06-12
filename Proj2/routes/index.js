@@ -9,7 +9,7 @@ const db = new sqlite3.Database("Users.sqlite");
 
 
 router.get('/', (req, res, next) => {
-	fs.readFile(path.join(__dirname, '..', 'views', 'index.html'), 'utf8', (err, page) => {
+	fs.readFile(path.join(__dirname, '..', 'views', 'loginPage.html'), 'utf8', (err, page) => {
 		if (err) {
 			console.error(err);
 			return;
