@@ -45,7 +45,7 @@
                             <input type="text" class="form-control" id="author" name="author"/>
 
                             <label class="form-label"for="isbn">Username ISBN!</label>
-                            <input type="number" class="form-control" id="isbn" name="isbn" required/>
+                            <input type="text" class="form-control" id="isbn" name="isbn"/>
 
                             <label class="form-label"for="title">Password title!</label>
                             <input type="text" class="form-control" id="title" name="title"/>
@@ -56,11 +56,11 @@
                         </div>
                     </form>
                     <div class="col-6">
-                        <button class="button">
-                            <a style="color:white !important; font-size: 20;" class="link"  href="/login">Back</a>
+                        <button class="button" href="/login">
+                            <a href="/login">Back</a>
                         </button>
                         <button class="button">
-                            <a style="color:white !important; font-size: 20;" class="link" href="/index">See all users</a>
+                            <a href="/index">See all users</a>
                         </button>
                     </div>
                 </div>
@@ -68,21 +68,5 @@
         </div>
     <main>
 </body>
-
-<script>
-
-    rows.forEach(
-					el => table_html = table_html + 
-						'<tr>' + 
-						'<td>' + el['isbn'] + '</td>' + 
-						'<td>' + el['title'] + '</td>' + 
-						'<td>' + el['author'] + '</td>' + 
-						'<td>' + el['description'] + '</td>' + 
-						'<td><a href="/book?isbn=' + el['isbn'] + '">Detail</a></td>' +
-						'<td><a href="/login/delete?isbn=' + el['isbn'] + '">Delete</a></td>' + 
-						'</tr>'
-				);
-
-</script>
 
 </html> 

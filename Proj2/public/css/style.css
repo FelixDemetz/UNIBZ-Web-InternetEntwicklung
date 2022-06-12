@@ -168,10 +168,15 @@ h2 { /* Little title in round section */
     width: 30vw;
 }
 
+button, button a {
+    font-size: 20 !important;
+    color: white !important;
+}
+
 .button {
     display: -webkit-flex; /* new line */
     padding: 6 30 6 30;
-    margin: 15;
+    margin: 15 0 15 0;
     border-radius: var(--brd-radius);
     border-style: none;
     color: var(--navtextfarbe);
