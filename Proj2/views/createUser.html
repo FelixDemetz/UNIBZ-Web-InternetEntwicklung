@@ -26,11 +26,11 @@
     <div>
         <div class="nav" id="myTopnav">
             <div>
-                <a id="nav0" href="#0">FreeCon</a>
+                <a style="float: left !important" id="nav0" href="/">FreeCon</a>
             </div>
         </div>
     </div>
-    
+
     <main>
         <div class="section" id="">
             <div class="container">
@@ -53,10 +53,7 @@
                             <label class="form-label"for="description">Description !</label>
                             <input type="text" class="form-control" id="description" name="description"/>
                             <div class="col-6">
-                            <button class="button" type="submit">Add Book</button>
-                                <!-- <button class="button" type="submit">
-                                    <a style="color:white !important; font-size: 20;" class="link" href="/index">Create</a>
-                                </button> -->
+                            <button class="button" type="submit">Create User</button>
                         </div>
                     </form>
                     <div class="col-6">
@@ -66,14 +63,27 @@
                         <button class="button">
                             <a style="color:white !important; font-size: 20;" class="link" href="/index">See all users</a>
                         </button>
-                        <button class="button">
-                            <a style="color:white !important; font-size: 20;" class="link" href="/book/newBook">create new book</a>
-                        </button>
                     </div>
                 </div>
             </div>
         </div>
     <main>
 </body>
+
+<script>
+
+    rows.forEach(
+					el => table_html = table_html + 
+						'<tr>' + 
+						'<td>' + el['isbn'] + '</td>' + 
+						'<td>' + el['title'] + '</td>' + 
+						'<td>' + el['author'] + '</td>' + 
+						'<td>' + el['description'] + '</td>' + 
+						'<td><a href="/book?isbn=' + el['isbn'] + '">Detail</a></td>' +
+						'<td><a href="/login/delete?isbn=' + el['isbn'] + '">Delete</a></td>' + 
+						'</tr>'
+				);
+
+</script>
 
 </html> 

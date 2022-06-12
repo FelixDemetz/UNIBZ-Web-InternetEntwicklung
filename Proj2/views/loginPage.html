@@ -26,7 +26,7 @@
     <div>
         <div class="nav" id="myTopnav">
             <div>
-                <a id="nav0" href="#0">FreeCon</a>
+                <a style="float: left !important" id="nav0" href="/">FreeCon</a>
             </div>
         </div>
     </div>
@@ -50,13 +50,17 @@
                         <button class="button">
                             <a style="color:white !important; font-size: 20;" class="link" href="/login/createUser">Create user</a>
                         </button>
-                        <button class="button">
-                            <a style="color:white !important; font-size: 20;" class="link" href="/homePage">to Home</a>
-                        </button>
                     </div>
                 </form>
             </div>
         </div>
+        <h1>All our Books</h1>
+        <table>
+					<thead><tr><th>ISBN</th><th>Title</th><th>Author</th></tr></thead>
+					<tbody>
+					{%table%}
+					</tbody>
+		</table>
     </div>
 </body>
 
