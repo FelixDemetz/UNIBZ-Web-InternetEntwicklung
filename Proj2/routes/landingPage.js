@@ -4,8 +4,8 @@ const router = express.Router()
 const fs = require('fs')
 const path = require('path')
 
-const sqlite3 = require('sqlite3')
-const db = new sqlite3.Database('./books.sqlite');
+sqlite3 = require("sqlite3").verbose();
+const db = new sqlite3.Database("Users.sqlite");
 
 
 router.get('/', (req, res, next) => {

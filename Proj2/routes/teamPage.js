@@ -4,9 +4,8 @@ const path = require('path')
 const fs = require('fs')
 
 
-const sqlite3 = require('sqlite3')
-const { text } = require('express')
-const db = new sqlite3.Database('./books.sqlite');
+sqlite3 = require("sqlite3").verbose();
+const db = new sqlite3.Database("Users.sqlite");
 
 const bodyParser = require('body-parser')
 var urlencodedParser = bodyParser.urlencoded({ extended: false })

@@ -4,8 +4,8 @@ const router = express.Router()
 const fs = require('fs')
 const path = require('path')
 
-const sqlite3 = require('sqlite3')
-const db = new sqlite3.Database('./books.sqlite');
+sqlite3 = require("sqlite3").verbose();
+const db = new sqlite3.Database("Users.sqlite");
 
 const bodyParser = require('body-parser')
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
@@ -19,16 +19,18 @@ router.get('/', (req, res, next) => {
 			return;
 		}
 		
-		db.all("SELECT * FROM books", function(err, rows) {
+		db.all("SELECT * FROM users", function(err, rows) {
 				let table_html = ''
 				rows.forEach(
 					el => table_html = table_html + 
 						'<tr>' + 
-						'<td>' + el['isbn'] + '</td>' + 
-						'<td>' + el['title'] + '</td>' + 
-						'<td>' + el['author'] + '</td>' + 
-						'<td><a href="/book?isbn=' + el['isbn'] + '">Detail</a></td>' +
-						'<td><a href="/book/delete?isbn=' + el['isbn'] + '">Delete</a></td>' + 
+						'<td>' + el['name'] + '</td>' + 
+						'<td>' + el['surname'] + '</td>' + 
+						'<td>' + el['username'] + '</td>' + 
+						'<td>' + el['password'] + '</td>' + 
+						'<td>' + el['description'] + '</td>' + 
+						'<td><a href="/book?name=' + el['isbn'] + '">Detail</a></td>' +
+						'<td><a href="/login/delete?isbn=' + el['isbn'] + '">Delete</a></td>' + 
 						'</tr>'
 				);
 				page = page.replace('{%table%}', table_html)

@@ -17,7 +17,7 @@ router.get('/', (req, res, next) => {
 	
 	if ('isbn' in req.query) {
 		db.all("SELECT * FROM books WHERE isbn=$isbn", {$isbn: req.query.isbn}, function(err, row) {
-			if (row.length == 1) {
+			// if (row.length == 1) {
 				
 				let curbook = row[0];
 			
@@ -36,9 +36,9 @@ router.get('/', (req, res, next) => {
 					res.write(page)
 					res.end();
 				});
-			} else {
-				res.status(404).sendFile(path.join(__dirname, '..', 'views', '404.html'))
-			}
+			// } else {
+			// 	res.status(404).sendFile(path.join(__dirname, '..', 'views', '404.html'))
+			// }
 		})
 	} else {	
 		res.status(404).sendFile(path.join(__dirname, '..', 'views', '404.html'))
