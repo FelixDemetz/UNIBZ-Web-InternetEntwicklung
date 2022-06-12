@@ -55,9 +55,15 @@ router.get('/createUser', (req, res, next) => {
 	});
 })
 
+router.get('/login/loggedin', (req, res, next) => {
+	console.log("Hello world!");
+	console.error("hi");
+	res.redirect('/sex');
+})
+
 router.post('/createUser', urlencodedParser, (req, res) => {
 
-	var isbn = req.body.isbn;
+	var isbn = req.body.isbn[0];
 	var title = req.body.title;
 	var author = req.body.author;
 	var description = req.body.description;
@@ -67,7 +73,7 @@ router.post('/createUser', urlencodedParser, (req, res) => {
 			console.error(err);
 			return;
 		}
-		res.redirect('/index');
+		res.redirect('/login');
 	})
 })
 
