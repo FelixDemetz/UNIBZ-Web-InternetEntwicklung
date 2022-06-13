@@ -26,7 +26,8 @@
     <div>
         <div class="nav" id="myTopnav">
             <div>
-                <a id="nav0" href="#0">FreeCon</a>
+                <a id="nav3" class="nav3" href="/#3">Values</a>
+                <a style="float: left !important" id="nav0" href="/">FreeCon</a>
             </div>
         </div>
     </div>
@@ -35,31 +36,31 @@
         <div class="section" id="">
             <div class="container">
                 <div id="singlePageSection">
-                    <h2>Create new user</h2>
+                    <h2 style="text-align: center !important">Create new user</h2>
                     <form id="loginLabels" className="col 6" action="/login/createUser" method="POST">
-                        <div>
+                        <div class="mb-3 col-6" id="container4">
                             <label class="form-label"for="name">Name</label>
-                            <input type="text" class="form-control" id="name" name="name"/>
+                            <input type="text" class="form-control" id="name" name="name" />
 
                             <label class="form-label"for="surname">Surname</label>
-                            <input type="text" class="form-control" id="surname" name="surname"/>
+                            <input type="text" class="form-control" id="surname" name="surname" />
 
                             <label class="form-label"for="username">Username</label>
-                            <input type="text" class="form-control" id="username" name="username"/>
+                            <input type="text" class="form-control" id="username" name="username" required/>
 
                             <label class="form-label"for="password">Password</label>
-                            <input type="password" class="form-control" id="password" name="password"/>
+                            <input type="password" class="form-control" id="password" name="password" required/>
 
                             <label class="form-label"for="description">Description</label>
-                            <input type="text" class="form-control" id="description" name="description"/>
-                            <div class="col-6">
-                            <button class="button" type="submit">Create User</button>
+                            <input type="text" class="form-control" id="description" name="description" />
+                        </div>
+                        <div>
+                            <button class="button" type="submit" style="margin-inline: auto">Create User</button>
+                            <button class="button" style="margin-inline: auto">
+                                <a href="/login">Back</a>
+                            </button>
                         </div>
                     </form>
-                    <div class="col-6">
-                        <button class="button">
-                            <a href="/login">Back</a>
-                        </button>
                     </div>
                 </div>
             </div>

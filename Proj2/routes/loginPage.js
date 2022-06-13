@@ -59,23 +59,28 @@ router.get('/createUser', (req, res, next) => {
 
 router.post('/createUser', urlencodedParser, (req, res) => {
 
-	var name = req.body.name;
-	var surname = req.body.surname;
-	var username = req.body.username;
-	var password = req.body.password;
-	var description = req.body.description;
+	var sameUser = req.body.username;
+	db.all("SELECT * FROM users", function(err, row) {
+		let curuser = row[0];
+		if (curuser?.username === sameUser) { // if user was already registert with same username show error
+			res.status(405).sendFile(path.join(__dirname, '..', 'views', '405.html'))
+		} else {
+			var name = req.body.name;
+			var surname = req.body.surname;
+			var username = req.body.username;
+			var password = req.body.password;
+			var description = req.body.description;
 
-	db.all("INSERT INTO users (name, surname, username, password, description) VALUES (?,?,?,?,?)", [name, surname, username, password, description], function(err, rows) {
-		if (err) {
-			console.error(err);
-			return;
+			db.all("INSERT INTO users (name, surname, username, password, description) VALUES (?,?,?,?,?)", [name, surname, username, password, description], function(err, rows) {
+				if (err) {
+					console.error(err);
+					return;
+				}
+					
+			res.redirect('/login')
+			});
 		}
-	})
-
-	db.all("CREATE TABLE " + username + "(username TEXT NOT NULL, posts TEXT NOT NULL);")
-	db.all("CREATE TABLE allPosts (username TEXT NOT NULL, posts TEXT NOT NULL);")
-
-	res.redirect('/login')
+	});
 })
 
 router.get('/delete', (req, res, next) => {

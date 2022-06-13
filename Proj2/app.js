@@ -8,7 +8,6 @@ const teamRoutes = require('./routes/teamPage.js')
 const landingRoutes = require('./routes/landingPage.js')
 const loginRoutes = require('./routes/loginPage.js')
 
-
 const { allowedNodeEnvironmentFlags } = require('process')
 
 sqlite3 = require("sqlite3").verbose();
