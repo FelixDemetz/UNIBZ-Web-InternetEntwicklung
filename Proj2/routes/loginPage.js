@@ -29,8 +29,8 @@ router.get('/', (req, res, next) => {
 						'<td>' + el['username'] + '</td>' + 
 						'<td>' + el['password'] + '</td>' + 
 						'<td>' + el['description'] + '</td>' + 
-						'<td><a href="/book?name=' + el['name'] + '">Detail</a></td>' +
-						'<td><a href="/login/delete?name=' + el['name'] + '">Delete</a></td>' + 
+						'<td><a href="/home?name=' + el['name'] + '">Detail</a></td>' +
+						'<td><a href="/login/delete?username=' + el['username'] + '">Delete</a></td>' + 
 						'</tr>'
 				);
 				page = page.replace('{%table%}', table_html)
@@ -70,23 +70,30 @@ router.post('/createUser', urlencodedParser, (req, res) => {
 			console.error(err);
 			return;
 		}
-		res.redirect('/index');
 	})
+
+	db.all("CREATE TABLE " + username + "(username TEXT NOT NULL, posts TEXT NOT NULL);")
+	db.all("CREATE TABLE allPosts (username TEXT NOT NULL, posts TEXT NOT NULL);")
+
+	res.redirect('/login')
 })
 
 router.get('/delete', (req, res, next) => {
-	var name = req.query.name;
+	console.log(req.query);
+	var username = req.query.username;
 	
-	if ('name' in req.query) {
+	if ('username' in req.query) {
 		
-		db.all("DELETE FROM users where name = ?",[name], function(err, rows){
+		db.all("DELETE FROM users where username = ?",[username], function(err, rows){
 			if (err) {
 				console.error(err);
 				return;
 			}
-			res.redirect('/index');
-			
 		})
+
+		db.all("DROP TABLE " + username +";")
+
+		res.redirect('/login');
 	} else {
 		res.status(404).sendFile(path.join(__dirname, '..', 'views', 'bookNotFound.html')) // opens a new page like "page not found"
 	}

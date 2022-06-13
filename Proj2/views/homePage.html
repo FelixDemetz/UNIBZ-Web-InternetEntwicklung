@@ -47,21 +47,21 @@
         <div class="section" id="3">
             <div class="container">
                 <h2>Post a message</h2>
-                <form id="loginLabels" className="col 6" action="" method="POST">
+                <form id="loginLabels" className="col 6" action="/home/newPost?username=username" method="POST">
                     <div>
-                        <label class="form-label" for="description">Connect!</label>
-                        <textarea style="width: 100% !important; height: 100px !important" type="text" class="form-control" id="description" name="description">spread love</textarea>
+                        <label class="form-label" for="posts">Connect!</label>
+                        <textarea style="width: 100% !important; height: 100px !important" type="text" class="form-control" id="posts" name="posts">spread love</textarea>
                         <div class="col-6">
                         <button class="button" type="submit">Post</button>
                     </div>
                 </form>
-                <a href="/index">Back</a>
             </div>
         </div>
         
         <!-- Section see all feeds -->
         <div class="section" id="2">
-            <div class="container">
+            {%feed%}
+            <!-- <div class="container">
                 <h2>Feeds</h2>
                 <div class="container" id="container2">
                     <div class="col-sm-12 col-md-8 col-lg-8" style= "padding:3%;">
@@ -93,7 +93,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
                 
     </body>

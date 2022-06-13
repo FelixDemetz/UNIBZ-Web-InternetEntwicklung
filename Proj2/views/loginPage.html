@@ -36,7 +36,7 @@
             <div className="row" id="singlePageSection">
                 <h2>Login</h2>
                 <span class="form-label" >Logged in as: <span class="form-label-user" id="userSpan"></span></span>
-                <form id="loginLabels" className="col 6" action="/login/loggedin">
+                <form id="loginLabels" className="col 6" action="/home">
                     <div class="mb-3 col-6">
                         <label class="form-label" htmlFor="bo">Username</label>
                         <input type="text" class="form-control" id="username" name="username"/>
@@ -54,7 +54,7 @@
         </div>
         <h1>All our Books</h1>
         <table>
-					<thead><tr><th>ISBN</th><th>Title</th><th>Author</th></tr></thead>
+					<thead><tr><th>Name</th><th>Surname</th><th>Username</th><th>Password</th><th>Description</th></tr></thead>
 					<tbody>
 					{%table%}
 					</tbody>
