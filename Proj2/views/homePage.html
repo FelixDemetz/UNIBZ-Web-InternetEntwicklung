@@ -26,8 +26,8 @@
             <div class="nav" id="myTopnav">
                 <a href="/login">log out</a>
                 <a href="/home/feed">Feed</a>
-                <a id="postNav" onclick="showPostingPane()">Post</a>
-                <a id="profileNav" onclick="showProfile()">Profile</a>
+                <a style="color: var(--farbe2)" id="postNav" onclick="showPostingPane()">Post</a>
+                <a id="profileNav" onclick="showProfile()"></a>
                 <a style="float: left !important" id="nav0" href="/">FreeCon</a>
             </div>
         </div>
@@ -42,14 +42,18 @@
                     <p>Name:<br>{%name%} {%surname%}</p>
                     <p>Beschreibung:<br>{%description%}</p>
                 </div>
-                <button class="button" style="margin-inline: auto">
-                    <a class="link" href="">Edit</a>
-                </button>
                 <button style="background-color: red !important; margin-inline: auto"class="button" onClick="showAlert()">
                     <a class="link" id="userToDelete">Delete User</a>   <!-- Link is created in a function -->
                 </button>
             </div>
         </div>
+
+        <footer>
+            <div class="container">
+                <text class="footertext" id="footercolor">© 2022 FreeCon</text>
+                <text class="footertext" id="footercolor">Developed by <a class="footerlinkfd" id="footercolor" href="https://gitlab.inf.unibz.it/Felix.Demetz/wie_202122_5808">Lucas & Felix</a></text>
+            </div>             
+        </footer>
 
         <!-- Section write own post -->
         <div class="section" id="2">
@@ -72,6 +76,13 @@
                 
     </body>
 
+    <footer>
+        <div class="container">
+            <text class="footertext" id="footercolor">© 2022 FreeCon</text>
+            <text class="footertext" id="footercolor">Developed by <a class="footerlinkfd" id="footercolor" href="https://gitlab.inf.unibz.it/Felix.Demetz/wie_202122_5808">Lucas & Felix</a></text>
+        </div>             
+    </footer>
+
     <!-- SCRIPTS -->
     
     <script href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"></script>
@@ -79,6 +90,8 @@
 
     <script> /* Gets the username of the Profile for other tags */
         let username = document.getElementById("containsProfile").textContent;
+
+        document.getElementById("profileNav").innerHTML = username;
 
         document.getElementById("textArea").innerHTML = username;
     </script>
@@ -122,13 +135,16 @@
             
         function showProfile() {
             x1.style.display = "block";
-            postNav.style.color = black;
+            profileNav.style.color = "var(--farbe2)";
             x2.style.display = "none";
+            postNav.style.color = "black";
         }
 
         function showPostingPane() {
                 x1.style.display = "none";
+                profileNav.style.color = "black";
                 x2.style.display = "block";
+                postNav.style.color = "var(--farbe2)";
         }
     </script>
         

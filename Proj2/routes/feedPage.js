@@ -24,14 +24,9 @@ router.get('/', (req, res, next) => {
 					'<div class="container" id="container2" style= "margin-bottom: 30">' +
 						'<div class="col-sm-12 col-md-8 col-lg-8" style= "padding:1%;">' +
 							'<div class="">' +
-								'<h2 style="color:black !important">' + el['username'] + '</h2>' +
+								'<h2 style="color:' + getRandomColor() +
+								'!important">' + el['username'] + '</h2>' +
 								'<p style="color:black !important">' + el['posts'] +  '</p>' +
-								'<button class="button">' +
-									'<a href="">like</a>' +
-								'</button>' +
-								'<button class="button">' +
-									'<a href="">dislike</a>' +
-								'</button>' +
 							'</div>' +
 						'</div>' +
 					'</div>' +
@@ -46,5 +41,10 @@ router.get('/', (req, res, next) => {
 		});
 
 })
+
+function getRandomColor(){
+            var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+            return randomColor;
+        }
 
 module.exports = router; 

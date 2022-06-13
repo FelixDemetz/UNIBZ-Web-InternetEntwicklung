@@ -200,6 +200,10 @@ button, button a {
 
 /* FOOTER */
 footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
     background-color: var(--footerfarbe);
     padding: 30;
     text-align: center;

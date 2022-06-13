@@ -40,10 +40,10 @@
                     <form id="loginLabels" className="col 6" action="/login/createUser" method="POST">
                         <div class="mb-3 col-6" id="container4">
                             <label class="form-label"for="name">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" />
+                            <input type="text" class="form-control" id="name" name="name" required/>
 
                             <label class="form-label"for="surname">Surname</label>
-                            <input type="text" class="form-control" id="surname" name="surname" />
+                            <input type="text" class="form-control" id="surname" name="surname" required/>
 
                             <label class="form-label"for="username">Username</label>
                             <input type="text" class="form-control" id="username" name="username" required/>
@@ -52,7 +52,7 @@
                             <input type="password" class="form-control" id="password" name="password" required/>
 
                             <label class="form-label"for="description">Description</label>
-                            <input type="text" class="form-control" id="description" name="description" />
+                            <input type="text" class="form-control" id="description" name="description" required/>
                         </div>
                         <div>
                             <button class="button" type="submit" style="margin-inline: auto">Create User</button>
@@ -67,5 +67,12 @@
         </div>
     <main>
 </body>
+
+<footer>
+    <div class="container">
+        <text class="footertext" id="footercolor">© 2022 FreeCon</text>
+        <text class="footertext" id="footercolor">Developed by <a class="footerlinkfd" id="footercolor" href="https://gitlab.inf.unibz.it/Felix.Demetz/wie_202122_5808">Lucas & Felix</a></text>
+    </div>             
+</footer>
 
 </html> 
