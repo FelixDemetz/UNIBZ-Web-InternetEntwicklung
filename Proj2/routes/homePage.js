@@ -49,48 +49,6 @@ router.get('/', (req, res, next) => {
 
 })
 
-
-router.get('/feed', (req, res, next) => {
-	console.log(req.query);
-
-	db.all("SELECT * FROM allPosts", function(err, rows) {
-
-		fs.readFile(path.join(__dirname, '..', 'views', 'homePage.html'), 'utf8', (err, page) => {
-			if (err) {
-				console.error(err);
-				return;
-			}
-			let table_html = ''
-			rows.forEach(
-				el => table_html = table_html + 
-				'<div class="container">' +
-					'<div class="container" id="container2">' +
-						'<div class="col-sm-12 col-md-8 col-lg-8" style= "padding:3%;">' +
-							'<div class="">' +
-								'<h2 style="color:black !important">' + el['username'] + '</h2>' +
-								'<p style="color:black !important">' + el['posts'] +  '</p>' +
-								'<button class="button">' +
-									'<a href="">like</a>' +
-								'</button>' +
-								'<button class="button">' +
-									'<a href="">dislike</a>' +
-								'</button>' +
-							'</div>' +
-						'</div>' +
-					'</div>' +
-				'</div>'
-				);
-				page = page.replace('{%feed%}', table_html);
-				res.write(page);
-					
-				res.end();
-			});
-				
-		});
-
-})
-
-
 router.post('/newPost', urlencodedParser, (req, res) => {
 	console.log(req.query);
 	// var text = req.body.posts;
@@ -103,7 +61,7 @@ router.post('/newPost', urlencodedParser, (req, res) => {
 			console.error(err);
 			return;
 		}
-		res.redirect('back');
+		res.redirect('/home/feed');
 	})
 })
 

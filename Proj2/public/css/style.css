@@ -297,6 +297,10 @@ i {  /* Damit der Burger Icon (für Mobile) in der vertikalen Mitte ist */
     padding: 0 10 0 10 !important;
 }
 
+#myTopnav.nav {
+    padding: 0 0 2.5 0 !important;
+}
+
 #container3 {
     margin: 30 0% 30 0%;
 }

@@ -24,50 +24,17 @@
         <!-- Navbar -->
         <div>
             <div class="nav" id="myTopnav">
-                <a href="/login">log out</a>
-                <a href="/home/feed">Feed</a>
-                <a id="postNav" onclick="showPostingPane()">Post</a>
-                <a id="profileNav" onclick="showProfile()">Profile</a>
+                <a id="nav3" href="/login">log out</a>
+                <a style="color:var(--farbe2)" href="/home/feed">Feed</a>
+                <a id="nav2" href="javascript:history.back()">Home</a>
                 <a style="float: left !important" id="nav0" href="/">FreeCon</a>
             </div>
         </div>
-
-        <!-- Section profile -->
-        <div style="display:none" class="section" id="1">
-            <div class="container" style="text-align: center">
-                <h2 style="text-align: center">Profile</h2>
-                <div style="margin-bottom: 40">
-                    <!--<p id="profileUsername"></p>-->
-                    <p>Username: </p><p id="containsProfile">{%username%}</p>
-                    <p>Name:<br>{%name%} {%surname%}</p>
-                    <p>Beschreibung:<br>{%description%}</p>
-                </div>
-                <button class="button" style="margin-inline: auto">
-                    <a class="link" href="">Edit</a>
-                </button>
-                <button style="background-color: red !important; margin-inline: auto"class="button" onClick="showAlert()">
-                    <a class="link" id="userToDelete">Delete User</a>   <!-- Link is created in a function -->
-                </button>
-            </div>
-        </div>
-
-        <!-- Section write own post -->
+        
+        <!-- Section see all feeds -->
         <div class="section" id="2">
-            <div class="container">
-                <h2>Post a message</h2>
-                <form id="loginLabels" className="col 6" action="/home/newPost" id="newPost" method="POST">
-                    <div>
-                        <label class="form-label" for="description">Connect!</label>
-                        <textarea style="width: 100% !important; height: 100px !important" type="text" class="form-control" id="text" name="text">spread love</textarea>
-                        <textarea style="display: none; width: 100% !important; height: 100px !important" type="text" class="form-control" id="textArea" name="textArea">spread love</textarea>
-                        <div class="col-6">
-                        <button class="button" type="submit" >
-                            <a class="link" id="newPost">Post</a>
-                        </button>
-                        <!-- onclick="getUsername()" -->
-                    </div>
-                </form>
-            </div>
+            <h1>Feed</h1>
+            {%feed%}
         </div>
                 
     </body>
@@ -76,12 +43,6 @@
     
     <script href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <script> /* Gets the username of the Profile for other tags */
-        let username = document.getElementById("containsProfile").textContent;
-
-        document.getElementById("textArea").innerHTML = username;
-    </script>
 
     <script>
         function getUsername() {
@@ -116,19 +77,29 @@
 
     <script> /* Shows text and hides it (under the foto of the Teammembers) */
         var x1 = document.getElementById("1");
-        var profileNav = document.getElementById("profileNav");
         var x2 = document.getElementById("2");
-        var postNav = document.getElementById("postNav");
+        var x3 = document.getElementById("3");
             
         function showProfile() {
             x1.style.display = "block";
-            postNav.style.color = black;
             x2.style.display = "none";
+            x3.style.display = "none";
+        }
+
+        function showFeed() {
+            if (x2.style.display === "none") {
+                x2.style.display = "block";
+                x1.style.display = "none";
+                x3.style.display = "none";
+            }
         }
 
         function showPostingPane() {
+            if (x3.style.display === "none") {
+                x3.style.display = "block";
                 x1.style.display = "none";
-                x2.style.display = "block";
+                x2.style.display = "none";
+            }
         }
     </script>
         
