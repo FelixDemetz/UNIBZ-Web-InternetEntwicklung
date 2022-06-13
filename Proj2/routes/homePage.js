@@ -13,64 +13,55 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 
 router.get('/', (req, res, next) => {
-	fs.readFile(path.join(__dirname, '..', 'views', 'homePage.html'), 'utf8', (err, page) => {
-		if (err) {
-			console.error(err);
-			return;
-		}
-		
-		db.all("SELECT * FROM users", function(err, rows) {
-				let table_html = ''
-				rows.forEach(
-					el => table_html = table_html + 
-						'<tr>' + 
-						'<td>' + el['name'] + '</td>' + 
-						'<td>' + el['surname'] + '</td>' + 
-						'<td>' + el['username'] + '</td>' + 
-						'<td>' + el['password'] + '</td>' + 
-						'<td>' + el['description'] + '</td>' + 
-						'<td><a href="/book?name=' + el['isbn'] + '">Detail</a></td>' +
-						'<td><a href="/login/delete?isbn=' + el['isbn'] + '">Delete</a></td>' + 
-						'</tr>'
-				);
-				page = page.replace('{%table%}', table_html)
+	console.log(req.query);
+	
+	if ('username' in req.query && 'password' in req.query) {
+		db.all("SELECT * FROM users WHERE username=$username AND password=$password", {$username: req.query.username, $password: req.query.password}, function(err, row) {
+			let curuser = row[0];
+			
+			// if username and password is the correct one and present in the db then true
+			if( (curuser?.username != undefined && curuser?.password != undefined) && (curuser.username == req.query.username && curuser.password == req.query.password) ) {
+			
+				fs.readFile(path.join(__dirname, '..', 'views', 'homePage.html'), 'utf8', (err, page) => {
+					if (err) {
+						console.error(err);
+						return;
+					}
 
-				res.setHeader('Content-Type', 'text/html')
-				res.write(page)
-				res.end();
-		});
+					page = page.replace('{%name%}', curuser.name)
+					page = page.replace('{%surname%}', curuser.surname)
+					page = page.replace('{%username%}', curuser.username)
+					page = page.replace('{%password%}', curuser.password)
+					page = page.replace('{%description%}', curuser.description)
 
-		
-	});
+					res.setHeader('Content-Type', 'text/html')
+					res.write(page)
+					res.end();
+				});
+			} else {
+				res.status(405).sendFile(path.join(__dirname, '..', 'views', '405.html'))
+			}
+		})
+	} else {	
+		res.status(404).sendFile(path.join(__dirname, '..', 'views', '404.html'))
+	}
+
 })
 
-router.get('/createUser', (req, res, next) => {
-	fs.readFile(path.join(__dirname, '..', 'views', 'createUser.html'), 'utf8', (err, page) => {
-		if (err) {
-			console.error(err);
-			return;
-		}
+// delette user - by Felix
+router.get('/delete', (req, res, next) => {
+	var username = req.query.username; // here reads the href
+		
+		db.all("DROP TABLE " + (username)) // deletes single table (containing the posts)
 
-		res.setHeader('Content-Type', 'text/html')
-		res.write(page)
-		res.end();
-	});
-})
+		db.all("DELETE FROM users where username = ?",[username], function(err, rows) { // deletes row with user in user table
+			if (err) {
+				console.error(err);
+				return;
+			}
+		})
 
-router.post('/createUser', urlencodedParser, (req, res) => {
-
-	var isbn = req.body.isbn;
-	var title = req.body.title;
-	var author = req.body.author;
-	var description = req.body.description;
-
-	db.all("INSERT INTO books (isbn, title, author, description) VALUES (?,?,?,?)", [isbn, title, author, description], function(err, rows) {
-		if (err) {
-			console.error(err);
-			return;
-		}
-		res.redirect('/index');
-	})
+		res.redirect("/login");
 })
 
 module.exports = router; 

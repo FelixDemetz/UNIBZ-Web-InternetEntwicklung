@@ -26,6 +26,7 @@
     <div>
         <div class="nav" id="myTopnav">
             <div>
+                <a id="nav3" class="nav3" href="/#3">Values</a>
                 <a style="float: left !important" id="nav0" href="/">FreeCon</a>
             </div>
         </div>
@@ -33,19 +34,21 @@
 
     <div class="section" id="">
         <div class="container">
-            <div className="row" id="singlePageSection">
-                <h2>Login</h2>
-                <span class="form-label" >Logged in as: <span class="form-label-user" id="userSpan"></span></span>
-                <form id="loginLabels" className="col 6" action="/login/loggedin">
-                    <div class="mb-3 col-6">
+            <div className="row" id="loginSection">
+                <h2 style="text-align: center !important">Login</h2>
+                <form id="loginLabels" className="col 6" action="/home">
+                    <div class="mb-3 col-6" id="container4">
                         <label class="form-label" htmlFor="bo">Username</label>
-                        <input type="text" class="form-control" id="username" name="username"/>
+                        <input type="text" class="form-control" id="username" name="username" required/>
                         <label class="form-label" htmlFor="bo">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" />
-                        <button class="button" type="submit">Login</button>
+                        <input type="password" class="form-control" id="password" name="password" required />
                     </div>
-                    <div class="col-6">
-                        <button class="button">
+                    <div>
+                        <button style="margin-inline: auto" class="button" type="submit">Login</button>
+                        
+                        <p style="text-align: center; font-size: 20px !important">or</p>
+                        
+                        <button class="button" style="margin-inline: auto">
                             <a class="link" href="/login/createUser">Register</a>
                         </button>
                     </div>
@@ -54,7 +57,7 @@
         </div>
         <h1>All our Books</h1>
         <table>
-					<thead><tr><th>ISBN</th><th>Title</th><th>Author</th></tr></thead>
+					<thead><tr><th>ISBN</th><th>Title</th><th>Username</th><th>Password</th></tr></thead>
 					<tbody>
 					{%table%}
 					</tbody>

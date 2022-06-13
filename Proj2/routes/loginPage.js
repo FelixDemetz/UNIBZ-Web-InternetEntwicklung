@@ -29,7 +29,7 @@ router.get('/', (req, res, next) => {
 						'<td>' + el['username'] + '</td>' + 
 						'<td>' + el['password'] + '</td>' + 
 						'<td>' + el['description'] + '</td>' + 
-						'<td><a href="/book?name=' + el['name'] + '">Detail</a></td>' +
+						'<td><a href="/home?name=' + el['name'] + '">Detail</a></td>' +
 						'<td><a href="/login/delete?name=' + el['name'] + '">Delete</a></td>' + 
 						'</tr>'
 				);
@@ -44,6 +44,7 @@ router.get('/', (req, res, next) => {
 	});
 })
 
+// register user
 router.get('/createUser', (req, res, next) => {
 	fs.readFile(path.join(__dirname, '..', 'views', 'createUser.html'), 'utf8', (err, page) => {
 		if (err) {
@@ -57,40 +58,33 @@ router.get('/createUser', (req, res, next) => {
 	});
 })
 
+// register user
 router.post('/createUser', urlencodedParser, (req, res) => {
 
-	var name = req.body.name;
-	var surname = req.body.surname;
-	var username = req.body.username;
-	var password = req.body.password;
-	var description = req.body.description;
+	var sameUser = req.body.username;
+	db.all("SELECT * FROM users", function(err, row) {
+		let curuser = row[0];
+		if (curuser?.username === sameUser) { // if user was already registert with same username show error
+			res.status(405).sendFile(path.join(__dirname, '..', 'views', '405.html'))
+		} else {
+			var name = req.body.name;
+			var surname = req.body.surname;
+			var username = req.body.username;
+			var password = req.body.password;
+			var description = req.body.description;
 
-	db.all("INSERT INTO users (name, surname, username, password, description) VALUES (?,?,?,?,?)", [name, surname, username, password, description], function(err, rows) {
-		if (err) {
-			console.error(err);
-			return;
+			db.all("INSERT INTO users (name, surname, username, password, description) VALUES (?,?,?,?,?)", [name, surname, username, password, description], function(err, rows) {
+				if (err) {
+					console.error(err);
+					return;
+				}
+				
+			db.all("CREATE TABLE " + username + "(posts TEXT NOT NULL);")
+					
+			res.redirect('/login')
+			});
 		}
-		res.redirect('/index');
-	})
-})
-
-router.get('/delete', (req, res, next) => {
-	var name = req.query.name;
-	
-	if ('name' in req.query) {
-		
-		db.all("DELETE FROM users where name = ?",[name], function(err, rows){
-			if (err) {
-				console.error(err);
-				return;
-			}
-			res.redirect('/index');
-			
-		})
-	} else {
-		res.status(404).sendFile(path.join(__dirname, '..', 'views', 'bookNotFound.html')) // opens a new page like "page not found"
-	}
-
+	});
 })
 
 module.exports = router; 

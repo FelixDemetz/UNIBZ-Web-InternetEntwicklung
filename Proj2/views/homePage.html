@@ -24,27 +24,56 @@
         <!-- Navbar -->
         <div>
             <div class="nav" id="myTopnav">
-                <a id="nav2" href="#3">Post</a>
-                <a id="nav2" href="#2">Feed</a>
-                <a id="nav1" href="#1">{%username%}</a>
                 <a id="nav3" href="/login">log out</a>
+                <a id="nav2" onclick="showPostingPane()">Post</a>
+                <a id="nav2" onclick="showFeed()">Feed</a>
+                <a id="nav1" onclick="showProfile()" style="text-decoration:underline">{%username%}</a>
                 <a style="float: left !important" id="nav0" href="/">FreeCon</a>
             </div>
         </div>
 
         <!-- Section profile -->
-        <div class="section" id="1">
+        <div style="display:none" class="section" id="1">
+            <div class="container" style="text-align: center">
+                <h2 style="text-align: center">Profile</h2>
+                <div style="margin-bottom: 40">
+                    <p id="profileUsername"></p>
+                    <p>Name: {%name%} {%surname%}</p>
+                    <p>Beschreibung:<br>{%description%}</p>
+                </div>
+                <button class="button" style="margin-inline: auto">
+                    <a class="link" href="">Edit</a>
+                </button>
+                <button style="background-color: red !important; margin-inline: auto"class="button" onClick="showAlert()">
+                    <a class="link" id="userToDelete">Delete User</a>   <!-- Link is created in a function -->
+                </button>
+            </div>
+        </div>
+        
+        <!-- Section see all feeds -->
+        <div style="display:block" class="section" id="2">
             <div class="container">
-                <h2>Profile</h2>
-                <p id="profileUsername"></p>
-                <p>Name: {%name%} {%surname%}</p>
-                <p>Beschreibung:<br>{%description%}</p>
-                <a href="/index">Back</a>
+                <h2>Feeds</h2>
+                <div class="container" id="container2">
+                    <div class="col-sm-12 col-md-8 col-lg-8" style= "padding:3%;">
+                        <div class="">
+                            <h2 style="color:black !important">*usrname*</h2>
+                            <p style="color:black !important">We don’t pretend to have all the answers. What we do have are goals to strive for, and a global community of businesses committed to doing the right thing by people and the planet.
+                            </p>
+                            <button class="button">
+                                <a href="">like</a>
+                            </button>
+                            <button class="button">
+                                <a href="">dislike</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Section write own post -->
-        <div class="section" id="3">
+        <div style="display:none" class="section" id="3">
             <div class="container">
                 <h2>Post a message</h2>
                 <form id="loginLabels" className="col 6" action="" method="POST">
@@ -52,47 +81,9 @@
                         <label class="form-label" for="description">Connect!</label>
                         <textarea style="width: 100% !important; height: 100px !important" type="text" class="form-control" id="description" name="description">spread love</textarea>
                         <div class="col-6">
-                        <button class="button" type="submit">Post</button>
+                        <button class="button" onClick="showAlert()"; type="submit">Post</button>
                     </div>
                 </form>
-                <a href="/index">Back</a>
-            </div>
-        </div>
-        
-        <!-- Section see all feeds -->
-        <div class="section" id="2">
-            <div class="container">
-                <h2>Feeds</h2>
-                <div class="container" id="container2">
-                    <div class="col-sm-12 col-md-8 col-lg-8" style= "padding:3%;">
-                        <div class="">
-                            <h2 style="color:black !important">Post title</h2>
-                            <p style="color:black !important">We don’t pretend to have all the answers. What we do have are goals to strive for, and a global community of businesses committed to doing the right thing by people and the planet.
-                            </p>
-                            <button class="button">
-                                <a href="">like</a>
-                            </button>
-                            <button class="button">
-                                <a href="">dislike</a>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="container" id="container2">
-                    <div class="col-sm-12 col-md-8 col-lg-8" style= "padding:3%;">
-                        <div class="">
-                            <h2 style="color:black !important">Post title</h2>
-                            <p style="color:black !important">We don’t pretend to have all the answers. What we do have are goals to strive for, and a global community of businesses committed to doing the right thing by people and the planet.
-                            </p>
-                            <button class="button">
-                                <a href="">like</a>
-                            </button>
-                            <button class="button">
-                                <a href="">dislike</a>
-                            </button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
                 
@@ -108,6 +99,19 @@
         document.getElementById("profileUsername").innerHTML = "Username: " + username;
     </script>
 
+    <script>
+      // The function below will start the confirmation dialog
+      function showAlert() {
+        var linkInBtnToDeleteUser = document.getElementById('userToDelete');
+        let confirmAction = confirm("Are you sure to delete your FreeCon account?");
+        if (confirmAction) {
+            linkInBtnToDeleteUser.href = "/home/delete?username=" + username;
+        } else {
+            showProfile();
+        }
+      }
+    </script>
+
     <script> /* In der Navbar wird zwischen "nav" und "nav responsive" gewechselt wenn der icon gedrückt wird */
         function myFunction() {
             var x = document.getElementById("myTopnav");
@@ -120,25 +124,31 @@
     </script>
 
     <script> /* Shows text and hides it (under the foto of the Teammembers) */
-        function myFunction2() {
-            var x = document.getElementById("hideText");
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
+        var x1 = document.getElementById("1");
+        var x2 = document.getElementById("2");
+        var x3 = document.getElementById("3");
+            
+        function showProfile() {
+            x1.style.display = "block";
+            x2.style.display = "none";
+            x3.style.display = "none";
+        }
+
+        function showFeed() {
+            if (x2.style.display === "none") {
+                x2.style.display = "block";
+                x1.style.display = "none";
+                x3.style.display = "none";
             }
         }
 
-        function myFunction3() {
-            var x = document.getElementById("hideText2");
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
+        function showPostingPane() {
+            if (x3.style.display === "none") {
+                x3.style.display = "block";
+                x1.style.display = "none";
+                x2.style.display = "none";
             }
         }
     </script>
         
-</html>
-
 </html>

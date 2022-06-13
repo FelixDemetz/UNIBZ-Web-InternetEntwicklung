@@ -61,15 +61,6 @@ h2 { /* Little title in round section */
     text-align: left;
 }
 
-/* #button{
-    color: var(--farbe2);
-    background-color: transparent;
-    border: none;
-    margin: 10 0 10 0 !important;
-    font-size: 40px !important;
-    text-align: left;
-} */
-
 #hideText + #hideText2 {
     display: none;
 }
@@ -102,9 +93,9 @@ h2 { /* Little title in round section */
     border-radius: var(--brd-radius);
     width: 100%;
 }
-
-.container4 {
-    overflow:hidden; /* img on hover will not exeed border */
+ /* login and register container */
+#container4 {
+    transform: translateX(25%)
 }
 
 .foto-container3 {
@@ -165,7 +156,7 @@ h2 { /* Little title in round section */
 }
 
 .imgTeam{
-    width: 30vw;
+        width: 30vw;
 }
 
 button, button a {
@@ -192,8 +183,8 @@ button, button a {
 
 .form-label, .form-label-user, td, tr { /* text over input boxes */
     font-size: 20px;
-    padding-top: 10px;
-    padding-bottom: 15px;
+    padding-top: 5px;
+    padding-bottom: 10px;
 }
 
 .form-label-user { /* text over input boxes */
@@ -245,12 +236,13 @@ i {  /* Damit der Burger Icon (für Mobile) in der vertikalen Mitte ist */
 
 .link, .link:hover, .link:focus, .link:active {
     color: var(--farbe2);
+    font-size: 20;
 }
 
 /* NAVBAR */
 
 #myTopnav.nav {
-    padding: 0 2% 5 2% !important;
+    padding: 0 55 2.5 55 !important;
     border-bottom-width: 3;
     border-bottom-style: solid;
     border-bottom-color: black;
@@ -276,36 +268,12 @@ i {  /* Damit der Burger Icon (für Mobile) in der vertikalen Mitte ist */
     float: right !important;
 
 }
-
-.navbar-brand1 {
-    font-size: 40px !important;
-    position: absolute;
-    fill: var(--navtextfarbe);
-    right: 50%;
-    transform: translate(50%, -20%); /* x and y*/
-}
-
-.navbar-brand1:hover, .navbar-brand1:focus, .navbar-brand1:active {
-    fill: var(--navfarbe2) !important;
-    color: var(--navfarbe2) !important;
-}
-
-a#navlang.navlang:hover, a#navlang.navlang:focus, a#navlang.navlang:active {
+.nav a:hover, .nav a.focus, .nav a:active {
+    cursor: pointer;
     color: var(--navfarbe2);
-    text-decoration: underline;
-}
-
-.nav a:hover, .nav a:focus, .nav a:active {
-    color: var(--navfarbe2) !important;
     /* background-color: var(--farbe2) !important; */
     background-color: none !important;
     text-decoration: none;
-}
-
-.nav a:focus .nav a:link {
-    color: var(--navfarbe2);
-    text-decoration: none;
-    outline: 0;
 }
 
 /* IMPRESSUM UND PRIVACY */
