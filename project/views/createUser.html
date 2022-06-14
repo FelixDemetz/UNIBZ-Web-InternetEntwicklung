@@ -1,0 +1,78 @@
+<html>
+<html lang="en">
+
+<head>
+    <title>Create user</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width"> <!-- Mobile responsive -->
+        <!-- <meta name="description" content="Meta Text">
+        <meta name="keywords" content="Keywords, Webseitenname, Inhabername uns"> -->
+        <meta name="author" content="Felix Demetz, Lucas Glück">
+        
+        <link rel="stylesheet" type="text/css"   href="/css/style.css">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- Bootsrap Framework -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- Menu Icon -->
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- Google Icons -->
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet"> <!-- Font -->
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div>
+        <div class="nav" id="myTopnav">
+            <div>
+                <a id="nav3" class="nav3" href="/#3">Values</a>
+                <a style="float: left !important" id="nav0" href="/">FreeCon</a>
+            </div>
+        </div>
+    </div>
+    
+    <main>
+        <div class="section" id="">
+            <div class="container">
+                <div id="singlePageSection">
+                    <h2 style="text-align: center !important">Create new user</h2>
+                    <form id="loginLabels" className="col 6" action="/login/createUser" method="POST">
+                        <div class="mb-3 col-6" id="container4">
+                            <label class="form-label"for="name">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required/>
+
+                            <label class="form-label"for="surname">Surname</label>
+                            <input type="text" class="form-control" id="surname" name="surname" required/>
+
+                            <label class="form-label"for="username">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" required/>
+
+                            <label class="form-label"for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required/>
+
+                            <label class="form-label"for="description">Description</label>
+                            <input type="text" class="form-control" id="description" name="description" required/>
+                        </div>
+                        <div>
+                            <button class="button" type="submit" style="margin-inline: auto">Create User</button>
+                            <button class="button" style="margin-inline: auto">
+                                <a href="/login">Back</a>
+                            </button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <main>
+</body>
+
+<footer style="position:relative !important">
+    <div class="container">
+        <text class="footertext" id="footercolor">© 2022 FreeCon</text>
+        <text class="footertext" id="footercolor">Developed by <a class="footerlinkfd" id="footercolor" href="https://gitlab.inf.unibz.it/Felix.Demetz/wie_202122_5808">Lucas & Felix</a></text>
+    </div>             
+</footer>
+
+</html> 
